@@ -13,7 +13,7 @@ function ElevationScroll(props) {
   });
 }
 
-export default function ElevateAppBar(props) {
+export default function Header(props) {
   return (
     <>
       <CssBaseline />
