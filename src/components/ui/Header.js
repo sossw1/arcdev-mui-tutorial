@@ -1,12 +1,30 @@
 import React from 'react';
-import { AppBar, Toolbar } from '@mui/material';
+import { AppBar, CssBaseline, Toolbar, useScrollTrigger } from '@mui/material';
 
-export default function Header(props) {
+function ElevationScroll(props) {
+  const { children } = props;
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0
+  });
+
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  });
+}
+
+export default function ElevateAppBar(props) {
   return (
-    <AppBar position='fixed'>
-      <Toolbar>
-        Arc Development
-      </Toolbar>
-    </AppBar>
-  )
+    <>
+      <CssBaseline />
+      <ElevationScroll {...props}>
+        <AppBar>
+          <Toolbar>
+            Arc Development
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
+      <Toolbar />
+    </>
+  );
 }
