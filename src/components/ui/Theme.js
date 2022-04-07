@@ -15,5 +15,10 @@ export default createTheme({
     secondary: {
       main: `${arcOrange}`
     }
+  },
+  mixins: {
+    toolbar: {
+      minHeight: '7em'
+    }
   }
 });

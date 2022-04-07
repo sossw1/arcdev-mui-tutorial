@@ -1,6 +1,8 @@
 import React from 'react';
 import { AppBar, CssBaseline, Toolbar, useScrollTrigger } from '@mui/material';
 
+import logo from '../../assets/logo.svg';
+
 function ElevationScroll(props) {
   const { children } = props;
   const trigger = useScrollTrigger({
@@ -19,8 +21,8 @@ export default function Header(props) {
       <CssBaseline />
       <ElevationScroll {...props}>
         <AppBar>
-          <Toolbar>
-            Arc Development
+          <Toolbar disableGutters>
+            <img alt='company logo' src={logo} style={{ height: '7em' }} />
           </Toolbar>
         </AppBar>
       </ElevationScroll>
