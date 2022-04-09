@@ -24,11 +24,11 @@ export default function Header(props) {
           <Toolbar disableGutters>
             <img alt='company logo' src={logo} style={{ height: '7em' }} />
             <Tabs sx={{ ml: 'auto' }}>
-              <Tab label='Home' />
-              <Tab label='Services' />
-              <Tab label='The Revolution' />
-              <Tab label='About Us' />
-              <Tab label='Contact Us' />
+              <Tab sx={{ fontFamily: 'Raleway' }} label='Home' />
+              <Tab sx={{ fontFamily: 'Raleway' }} label='Services' />
+              <Tab sx={{ fontFamily: 'Raleway' }} label='The Revolution' />
+              <Tab sx={{ fontFamily: 'Raleway' }} label='About Us' />
+              <Tab sx={{ fontFamily: 'Raleway' }} label='Contact Us' />
             </Tabs>
           </Toolbar>
         </AppBar>
