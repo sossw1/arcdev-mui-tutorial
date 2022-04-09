@@ -22,7 +22,10 @@ const sxTabs = {
 const sxTab = {
   fontFamily: 'Raleway',
   fontWeight: 700,
-  textTransform: 'none'
+  fontSize: '1rem',
+  textTransform: 'none',
+  minWidth: 10,
+  ml: '1.5rem'
 }
 
 export default function Header(props) {
