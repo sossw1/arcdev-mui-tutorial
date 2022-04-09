@@ -24,6 +24,7 @@ const sxTab = {
   fontWeight: 700,
   fontSize: '1rem',
   textTransform: 'none',
+  color: 'common.white',
   minWidth: 10,
   ml: '1.5rem'
 }
