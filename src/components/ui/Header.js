@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, CssBaseline, Tab, Tabs, Toolbar, useScrollTrigger } from '@mui/material';
+import { AppBar, Button, CssBaseline, Tab, Tabs, Toolbar, useScrollTrigger } from '@mui/material';
 
 import logo from '../../assets/logo.svg';
 
@@ -28,6 +28,12 @@ const sxTab = {
   ml: '1.5rem'
 }
 
+const sxButton = {
+  borderRadius: '50px',
+  ml: '3.5rem',
+  mr: '1.75rem'
+}
+
 export default function Header(props) {
   return (
     <>
@@ -43,6 +49,9 @@ export default function Header(props) {
               <Tab sx={sxTab} label='About Us' />
               <Tab sx={sxTab} label='Contact Us' />
             </Tabs>
+            <Button sx={sxButton} variant='contained' color='secondary'>
+              Free Estimate
+            </Button>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
