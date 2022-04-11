@@ -1,5 +1,5 @@
 import { cloneElement, useState, useEffect } from 'react';
-import { AppBar, Button, CssBaseline, Tab, Tabs, Toolbar, useScrollTrigger } from '@mui/material';
+import { AppBar, Button, CssBaseline, Menu, MenuItem, Tab, Tabs, Toolbar, useScrollTrigger } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 
 import logo from '../../assets/logo.svg';
@@ -45,9 +45,21 @@ const sxButton = {
 
 export default function Header(props) {
   const [value, setValue] = useState(0);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [open, setOpen] = useState(false);
 
   const handleChange = (event, value) => {
     setValue(value);
+  }
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+    setOpen(true);
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null);
+    setOpen(false);
   }
 
   const location = useLocation();
@@ -76,15 +88,59 @@ export default function Header(props) {
               <img alt='company logo' src={logo} style={styleLogoImage} />
             </Button>
             <Tabs value={value} textColor={'secondary'} onChange={handleChange} sx={sxTabs} aria-label="navigation tabs">
-              <Tab sx={sxTab} component={Link} to='/' label='Home' disableRipple />
-              <Tab sx={sxTab} component={Link} to='/services' label='Services' disableRipple />
-              <Tab sx={sxTab} component={Link} to='/revolution' label='The Revolution' disableRipple />
-              <Tab sx={sxTab} component={Link} to='/about' label='About Us' disableRipple />
-              <Tab sx={sxTab} component={Link} to='/contact' label='Contact Us' disableRipple />
+              <Tab
+                sx={sxTab}
+                component={Link}
+                to='/'
+                label='Home'
+                disableRipple
+              />
+              <Tab
+                sx={sxTab}
+                component={Link}
+                to='/services'
+                label='Services'
+                disableRipple
+                aria-owns={anchorEl ? 'services-menu' : undefined}
+                aria-haspopup={anchorEl ? true : undefined}
+                onMouseOver={event => handleClick(event)}
+              />
+              <Tab
+                sx={sxTab}
+                component={Link}
+                to='/revolution'
+                label='The Revolution'
+                disableRipple
+              />
+              <Tab
+                sx={sxTab}
+                component={Link}
+                to='/about'
+                label='About Us'
+                disableRipple
+              />
+              <Tab
+                sx={sxTab}
+                component={Link}
+                to='/contact'
+                label='Contact Us'
+                disableRipple
+              />
             </Tabs>
             <Button sx={sxButton} variant='contained' color='secondary'>
               Free Estimate
             </Button>
+            <Menu id='services-menu' anchorEl={anchorEl} open={open} onClose={handleClose} MenuListProps={{ onMouseLeave: handleClose }}>
+              <MenuItem onClick={handleClose}>
+                Custom Software Development
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                Mobile App Development
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                Website Development
+              </MenuItem>
+            </Menu>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
