@@ -131,6 +131,9 @@ export default function Header(props) {
               Free Estimate
             </Button>
             <Menu id='services-menu' anchorEl={anchorEl} open={open} onClose={handleClose} MenuListProps={{ onMouseLeave: handleClose }}>
+              <MenuItem onClick={() => { handleClose(); setValue(1) }} component={Link} to='services'>
+                Services
+              </MenuItem>
               <MenuItem onClick={() => { handleClose(); setValue(1) }} component={Link} to='custom-software'>
                 Custom Software Development
               </MenuItem>
