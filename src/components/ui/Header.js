@@ -2,6 +2,7 @@ import React from 'react';
 import { AppBar, Button, CssBaseline, Tab, Tabs, Toolbar, useScrollTrigger } from '@mui/material';
 
 import logo from '../../assets/logo.svg';
+import theme from './Theme';
 
 function ElevationScroll(props) {
   const { children } = props;
@@ -30,14 +31,11 @@ const sxTab = {
 }
 
 const sxButton = {
+  ...theme.typography.estimate,
   borderRadius: '50px',
   ml: '3.5rem',
   mr: '1.75rem',
-  fontFamily: 'Pacifico',
-  fontSize: '1rem',
-  textTransform: 'none',
-  height: '45px',
-  color: 'common.white'
+  height: '45px'
 }
 
 export default function Header(props) {

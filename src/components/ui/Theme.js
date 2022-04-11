@@ -20,5 +20,13 @@ export default createTheme({
     toolbar: {
       minHeight: '7em'
     }
+  },
+  typography: {
+    estimate: {
+      fontFamily: 'Pacifico',
+      fontSize: '1rem',
+      textTransform: 'none',
+      color: 'common.white'
+    }
   }
 });
