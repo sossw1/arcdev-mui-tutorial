@@ -43,6 +43,13 @@ const sxButton = {
   height: '45px'
 }
 
+const sxPaper = {
+  sx: {
+    backgroundColor: 'common.blue',
+    color: 'common.white'
+  }
+}
+
 export default function Header(props) {
   const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -130,7 +137,7 @@ export default function Header(props) {
             <Button sx={sxButton} variant='contained' color='secondary'>
               Free Estimate
             </Button>
-            <Menu id='services-menu' anchorEl={anchorEl} open={open} onClose={handleClose} MenuListProps={{ onMouseLeave: handleClose }}>
+            <Menu id='services-menu' anchorEl={anchorEl} open={open} onClose={handleClose} MenuListProps={{ onMouseLeave: handleClose }} PaperProps={sxPaper} elevation={0}>
               <MenuItem onClick={() => { handleClose(); setValue(1) }} component={Link} to='services'>
                 Services
               </MenuItem>
