@@ -32,7 +32,12 @@ const sxTab = {
 const sxButton = {
   borderRadius: '50px',
   ml: '3.5rem',
-  mr: '1.75rem'
+  mr: '1.75rem',
+  fontFamily: 'Pacifico',
+  fontSize: '1rem',
+  textTransform: 'none',
+  height: '45px',
+  color: 'common.white'
 }
 
 export default function Header(props) {
