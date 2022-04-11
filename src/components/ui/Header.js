@@ -1,5 +1,6 @@
 import { cloneElement, useState } from 'react';
 import { AppBar, Button, CssBaseline, Tab, Tabs, Toolbar, useScrollTrigger } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 import logo from '../../assets/logo.svg';
 import theme from './Theme';
@@ -49,11 +50,11 @@ export default function Header(props) {
           <Toolbar disableGutters>
             <img alt='company logo' src={logo} style={{ height: '7em' }} />
             <Tabs value={value} textColor={'secondary'} onChange={handleChange} sx={sxTabs}>
-              <Tab sx={sxTab} value={0} label='Home' />
-              <Tab sx={sxTab} value={1} label='Services' />
-              <Tab sx={sxTab} value={2} label='The Revolution' />
-              <Tab sx={sxTab} value={3} label='About Us' />
-              <Tab sx={sxTab} value={4} label='Contact Us' />
+              <Tab sx={sxTab} component={Link} to='/' label='Home' />
+              <Tab sx={sxTab} component={Link} to='/services' label='Services' />
+              <Tab sx={sxTab} component={Link} to='/revolution' label='The Revolution' />
+              <Tab sx={sxTab} component={Link} to='/about' label='About Us' />
+              <Tab sx={sxTab} component={Link} to='/contact' label='Contact Us' />
             </Tabs>
             <Button sx={sxButton} variant='contained' color='secondary'>
               Free Estimate
