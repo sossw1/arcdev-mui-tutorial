@@ -17,6 +17,14 @@ function ElevationScroll(props) {
   });
 }
 
+const sxLogoButton = {
+  padding: 0
+}
+
+const styleLogoImage = {
+  height: '8em'
+}
+
 const sxTabs = {
   ml: 'auto'
 }
@@ -64,13 +72,15 @@ export default function Header(props) {
       <ElevationScroll {...props}>
         <AppBar>
           <Toolbar disableGutters>
-            <img alt='company logo' src={logo} style={{ height: '7em' }} />
+            <Button component={Link} to='/' sx={sxLogoButton} disableRipple>
+              <img alt='company logo' src={logo} style={styleLogoImage} />
+            </Button>
             <Tabs value={value} textColor={'secondary'} onChange={handleChange} sx={sxTabs}>
-              <Tab sx={sxTab} component={Link} to='/' label='Home' />
-              <Tab sx={sxTab} component={Link} to='/services' label='Services' />
-              <Tab sx={sxTab} component={Link} to='/revolution' label='The Revolution' />
-              <Tab sx={sxTab} component={Link} to='/about' label='About Us' />
-              <Tab sx={sxTab} component={Link} to='/contact' label='Contact Us' />
+              <Tab sx={sxTab} component={Link} to='/' label='Home' disableRipple />
+              <Tab sx={sxTab} component={Link} to='/services' label='Services' disableRipple />
+              <Tab sx={sxTab} component={Link} to='/revolution' label='The Revolution' disableRipple />
+              <Tab sx={sxTab} component={Link} to='/about' label='About Us' disableRipple />
+              <Tab sx={sxTab} component={Link} to='/contact' label='Contact Us' disableRipple />
             </Tabs>
             <Button sx={sxButton} variant='contained' color='secondary'>
               Free Estimate
