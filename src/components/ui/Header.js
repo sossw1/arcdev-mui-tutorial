@@ -1,4 +1,4 @@
-import React from 'react';
+import { cloneElement, useState } from 'react';
 import { AppBar, Button, CssBaseline, Tab, Tabs, Toolbar, useScrollTrigger } from '@mui/material';
 
 import logo from '../../assets/logo.svg';
@@ -11,7 +11,7 @@ function ElevationScroll(props) {
     threshold: 0
   });
 
-  return React.cloneElement(children, {
+  return cloneElement(children, {
     elevation: trigger ? 4 : 0,
   });
 }
@@ -35,6 +35,12 @@ const sxButton = {
 }
 
 export default function Header(props) {
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event, value) => {
+    setValue(value);
+  }
+
   return (
     <>
       <CssBaseline />
@@ -42,12 +48,12 @@ export default function Header(props) {
         <AppBar>
           <Toolbar disableGutters>
             <img alt='company logo' src={logo} style={{ height: '7em' }} />
-            <Tabs sx={sxTabs}>
-              <Tab sx={sxTab} label='Home' />
-              <Tab sx={sxTab} label='Services' />
-              <Tab sx={sxTab} label='The Revolution' />
-              <Tab sx={sxTab} label='About Us' />
-              <Tab sx={sxTab} label='Contact Us' />
+            <Tabs value={value} textColor={'secondary'} onChange={handleChange} sx={sxTabs}>
+              <Tab sx={sxTab} value={0} label='Home' />
+              <Tab sx={sxTab} value={1} label='Services' />
+              <Tab sx={sxTab} value={2} label='The Revolution' />
+              <Tab sx={sxTab} value={3} label='About Us' />
+              <Tab sx={sxTab} value={4} label='Contact Us' />
             </Tabs>
             <Button sx={sxButton} variant='contained' color='secondary'>
               Free Estimate
