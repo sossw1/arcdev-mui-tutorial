@@ -27,6 +27,13 @@ export default createTheme({
       fontSize: '1rem',
       textTransform: 'none',
       color: 'common.white'
+    },
+    tab: {
+      fontFamily: 'Raleway',
+      fontWeight: 700,
+      fontSize: '1rem',
+      textTransform: 'none',
+      color: 'common.white',
     }
   }
 });

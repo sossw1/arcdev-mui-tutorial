@@ -21,11 +21,7 @@ const sxTabs = {
 }
 
 const sxTab = {
-  fontFamily: 'Raleway',
-  fontWeight: 700,
-  fontSize: '1rem',
-  textTransform: 'none',
-  color: 'common.white',
+  ...theme.typography.tab,
   minWidth: 10,
   ml: '1.5rem'
 }
