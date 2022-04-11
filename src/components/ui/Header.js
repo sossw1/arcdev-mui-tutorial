@@ -1,6 +1,6 @@
-import { cloneElement, useState } from 'react';
+import { cloneElement, useState, useEffect } from 'react';
 import { AppBar, Button, CssBaseline, Tab, Tabs, Toolbar, useScrollTrigger } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import logo from '../../assets/logo.svg';
 import theme from './Theme';
@@ -41,6 +41,22 @@ export default function Header(props) {
   const handleChange = (event, value) => {
     setValue(value);
   }
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/' && value !== 0) {
+      setValue(0);
+    } else if (location.pathname === '/services' && value !== 1) {
+      setValue(1);
+    } else if (location.pathname === '/revolution' && value !== 2) {
+      setValue(2);
+    } else if (location.pathname === '/about' && value !== 3) {
+      setValue(3);
+    } else if (location.pathname === '/contact' && value !== 4) {
+      setValue(4);
+    }
+  }, [location.pathname, value])
 
   return (
     <>
