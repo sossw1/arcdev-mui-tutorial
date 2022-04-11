@@ -75,7 +75,7 @@ export default function Header(props) {
             <Button component={Link} to='/' sx={sxLogoButton} disableRipple>
               <img alt='company logo' src={logo} style={styleLogoImage} />
             </Button>
-            <Tabs value={value} textColor={'secondary'} onChange={handleChange} sx={sxTabs}>
+            <Tabs value={value} textColor={'secondary'} onChange={handleChange} sx={sxTabs} aria-label="navigation tabs">
               <Tab sx={sxTab} component={Link} to='/' label='Home' disableRipple />
               <Tab sx={sxTab} component={Link} to='/services' label='Services' disableRipple />
               <Tab sx={sxTab} component={Link} to='/revolution' label='The Revolution' disableRipple />
