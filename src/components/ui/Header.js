@@ -40,7 +40,8 @@ const sxButton = {
 const sxPaper = {
   sx: {
     backgroundColor: 'common.blue',
-    color: 'common.white'
+    color: 'common.white',
+    borderRadius: 0
   }
 }
 
