@@ -50,6 +50,14 @@ const sxPaper = {
   }
 }
 
+const sxMenuItem = {
+  ...theme.typography.tab,
+  opacity: 0.7,
+  '&:hover': {
+    opacity: 1
+  }
+}
+
 export default function Header(props) {
   const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -159,25 +167,29 @@ export default function Header(props) {
               <MenuItem
                 onClick={() => { handleClose(); setValue(1) }}
                 component={Link}
-                to='services'>
+                to='services'
+                sx={sxMenuItem}>
                 Services
               </MenuItem>
               <MenuItem
                 onClick={() => { handleClose(); setValue(1) }}
                 component={Link}
-                to='custom-software'>
+                to='custom-software'
+                sx={sxMenuItem}>
                 Custom Software Development
               </MenuItem>
               <MenuItem
                 onClick={() => { handleClose(); setValue(1) }}
                 component={Link}
-                to='mobile-apps'>
+                to='mobile-apps'
+                sx={sxMenuItem}>
                 Mobile App Development
               </MenuItem>
               <MenuItem
                 onClick={() => { handleClose(); setValue(1) }}
                 component={Link}
-                to='websites'>
+                to='websites'
+                sx={sxMenuItem}>
                 Website Development
               </MenuItem>
             </Menu>
