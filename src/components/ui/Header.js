@@ -91,10 +91,21 @@ export default function Header(props) {
       <ElevationScroll {...props}>
         <AppBar>
           <Toolbar disableGutters>
-            <Button component={Link} to='/' sx={sxLogoButton} disableRipple>
+            <Button
+              component={Link}
+              to='/'
+              sx={sxLogoButton}
+              disableRipple
+            >
               <img alt='company logo' src={logo} style={styleLogoImage} />
             </Button>
-            <Tabs value={value} textColor={'secondary'} onChange={handleChange} sx={sxTabs} aria-label="navigation tabs">
+            <Tabs
+              value={value}
+              textColor={'secondary'}
+              onChange={handleChange}
+              sx={sxTabs}
+              aria-label="navigation tabs"
+            >
               <Tab
                 sx={sxTab}
                 component={Link}
@@ -137,17 +148,36 @@ export default function Header(props) {
             <Button sx={sxButton} variant='contained' color='secondary'>
               Free Estimate
             </Button>
-            <Menu id='services-menu' anchorEl={anchorEl} open={open} onClose={handleClose} MenuListProps={{ onMouseLeave: handleClose }} PaperProps={sxPaper} elevation={0}>
-              <MenuItem onClick={() => { handleClose(); setValue(1) }} component={Link} to='services'>
+            <Menu
+              id='services-menu'
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{ onMouseLeave: handleClose }}
+              PaperProps={sxPaper}
+              elevation={0}>
+              <MenuItem
+                onClick={() => { handleClose(); setValue(1) }}
+                component={Link}
+                to='services'>
                 Services
               </MenuItem>
-              <MenuItem onClick={() => { handleClose(); setValue(1) }} component={Link} to='custom-software'>
+              <MenuItem
+                onClick={() => { handleClose(); setValue(1) }}
+                component={Link}
+                to='custom-software'>
                 Custom Software Development
               </MenuItem>
-              <MenuItem onClick={() => { handleClose(); setValue(1) }} component={Link} to='mobile-apps'>
+              <MenuItem
+                onClick={() => { handleClose(); setValue(1) }}
+                component={Link}
+                to='mobile-apps'>
                 Mobile App Development
               </MenuItem>
-              <MenuItem onClick={() => { handleClose(); setValue(1) }} component={Link} to='websites'>
+              <MenuItem
+                onClick={() => { handleClose(); setValue(1) }}
+                component={Link}
+                to='websites'>
                 Website Development
               </MenuItem>
             </Menu>
