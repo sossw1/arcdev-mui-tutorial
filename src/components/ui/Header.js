@@ -29,12 +29,6 @@ const sxTabs = {
   ml: 'auto'
 }
 
-const sxTab = {
-  ...theme.typography.tab,
-  minWidth: 10,
-  ml: '1.5rem'
-}
-
 const sxButton = {
   ...theme.typography.estimate,
   borderRadius: '50px',
@@ -62,6 +56,18 @@ export default function Header(props) {
   const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   const [open, setOpen] = useState(false);
+
+  const sxTab = (val) => {
+    return {
+      ...theme.typography.tab,
+      minWidth: 10,
+      ml: '1.5rem',
+      opacity: (value === val ? 1 : 0.7),
+      '&:hover': {
+        opacity: 1
+      }
+    }
+  }
 
   const handleChange = (event, value) => {
     setValue(value);
@@ -115,14 +121,14 @@ export default function Header(props) {
               aria-label="navigation tabs"
             >
               <Tab
-                sx={sxTab}
+                sx={sxTab(0)}
                 component={Link}
                 to='/'
                 label='Home'
                 disableRipple
               />
               <Tab
-                sx={sxTab}
+                sx={sxTab(1)}
                 component={Link}
                 to='/services'
                 label='Services'
@@ -132,21 +138,21 @@ export default function Header(props) {
                 onMouseOver={event => handleClick(event)}
               />
               <Tab
-                sx={sxTab}
+                sx={sxTab(2)}
                 component={Link}
                 to='/revolution'
                 label='The Revolution'
                 disableRipple
               />
               <Tab
-                sx={sxTab}
+                sx={sxTab(3)}
                 component={Link}
                 to='/about'
                 label='About Us'
                 disableRipple
               />
               <Tab
-                sx={sxTab}
+                sx={sxTab(4)}
                 component={Link}
                 to='/contact'
                 label='Contact Us'
