@@ -57,14 +57,14 @@ export default function Header(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   const [open, setOpen] = useState(false);
 
-  const sxTab = (val) => {
+  const sxTab = (val, opaqueOnHover = false) => {
     return {
       ...theme.typography.tab,
       minWidth: 10,
       ml: '1.5rem',
       opacity: (value === val ? 1 : 0.7),
       '&:hover': {
-        opacity: 1
+        opacity: (opaqueOnHover ? 0.7 : 1)
       }
     }
   }
@@ -128,7 +128,7 @@ export default function Header(props) {
                 disableRipple
               />
               <Tab
-                sx={sxTab(1)}
+                sx={sxTab(1, true)}
                 component={Link}
                 to='/services'
                 label='Services'
