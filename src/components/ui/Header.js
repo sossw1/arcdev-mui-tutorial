@@ -58,6 +58,21 @@ export default function Header(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   const [open, setOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/' && value !== 0) {
+      setValue(0);
+    } else if (location.pathname === '/services' && value !== 1) {
+      setValue(1);
+    } else if (location.pathname === '/revolution' && value !== 2) {
+      setValue(2);
+    } else if (location.pathname === '/about' && value !== 3) {
+      setValue(3);
+    } else if (location.pathname === '/contact' && value !== 4) {
+      setValue(4);
+    }
+  }, [location.pathname, value]);
 
   const sxTab = (val, opaqueOnHover = false) => {
     return {
@@ -85,27 +100,11 @@ export default function Header(props) {
     setOpen(false);
   }
 
-  const location = useLocation();
-
   const handleMenuItemClick = (event, index) => {
     setAnchorEl(null);
     setOpen(false);
     setSelectedIndex(index);
   }
-
-  useEffect(() => {
-    if (location.pathname === '/' && value !== 0) {
-      setValue(0);
-    } else if (location.pathname === '/services' && value !== 1) {
-      setValue(1);
-    } else if (location.pathname === '/revolution' && value !== 2) {
-      setValue(2);
-    } else if (location.pathname === '/about' && value !== 3) {
-      setValue(3);
-    } else if (location.pathname === '/contact' && value !== 4) {
-      setValue(4);
-    }
-  }, [location.pathname, value])
 
   const menuOptions = [
     {
