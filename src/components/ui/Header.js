@@ -50,6 +50,10 @@ const sxMenuItem = {
   opacity: 0.7,
   '&:hover': {
     opacity: 1
+  },
+  '&.Mui-selected': {
+    color: '#FFBA60',
+    opacity: 1
   }
 }
 
