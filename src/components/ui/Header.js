@@ -65,16 +65,34 @@ export default function Header(props) {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === '/' && value !== 0) {
-      setValue(0);
-    } else if (location.pathname === '/services' && value !== 1) {
-      setValue(1);
-    } else if (location.pathname === '/revolution' && value !== 2) {
-      setValue(2);
-    } else if (location.pathname === '/about' && value !== 3) {
-      setValue(3);
-    } else if (location.pathname === '/contact' && value !== 4) {
-      setValue(4);
+    switch (location.pathname) {
+      case '/':
+        if (value !== 0) {
+          setValue(0);
+        }
+        break;
+      case '/services':
+        if (value !== 1) {
+          setValue(1);
+        }
+        break;
+      case '/revolution':
+        if (value !== 2) {
+          setValue(2);
+        }
+        break;
+      case '/about':
+        if (value !== 3) {
+          setValue(3);
+        }
+        break;
+      case '/contact':
+        if (value !== 4) {
+          setValue(4);
+        }
+        break;
+      default:
+        break;
     }
   }, [location.pathname, value]);
 
