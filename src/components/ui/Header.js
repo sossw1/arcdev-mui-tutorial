@@ -74,6 +74,25 @@ export default function Header(props) {
       case '/services':
         if (value !== 1) {
           setValue(1);
+          setSelectedIndex(0);
+        }
+        break;
+      case '/custom-software':
+        if (value !== 1) {
+          setValue(1);
+          setSelectedIndex(1);
+        }
+        break;
+      case '/mobile-apps':
+        if (value !== 1) {
+          setValue(1);
+          setSelectedIndex(2);
+        }
+        break;
+      case '/websites':
+        if (value !== 1) {
+          setValue(1);
+          setSelectedIndex(3);
         }
         break;
       case '/revolution':
