@@ -57,6 +57,7 @@ export default function Header(props) {
   const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   const [open, setOpen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const sxTab = (val, opaqueOnHover = false) => {
     return {
@@ -85,6 +86,12 @@ export default function Header(props) {
   }
 
   const location = useLocation();
+
+  const handleMenuItemClick = (event, index) => {
+    setAnchorEl(null);
+    setOpen(false);
+    setSelectedIndex(index);
+  }
 
   useEffect(() => {
     if (location.pathname === '/' && value !== 0) {
@@ -195,9 +202,10 @@ export default function Header(props) {
                 <MenuItem
                   key={option}
                   onClick={(event) => {
-                    handleClose();
+                    handleMenuItemClick(event, index);
                     setValue(1);
                   }}
+                  selected={index === selectedIndex && value === 1}
                   component={Link}
                   to={option.link}
                   sx={sxMenuItem}
