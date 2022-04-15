@@ -100,6 +100,25 @@ export default function Header(props) {
     }
   }, [location.pathname, value])
 
+  const menuOptions = [
+    {
+      name: 'Services',
+      link: '/services'
+    },
+    {
+      name: 'Custom Software Development',
+      link: '/custom-software'
+    },
+    {
+      name: 'Mobile App Development',
+      link: 'mobile-apps'
+    },
+    {
+      name: 'Website Development',
+      link: 'websites'
+    }
+  ];
+
   return (
     <>
       <CssBaseline />
@@ -170,35 +189,22 @@ export default function Header(props) {
               onClose={handleClose}
               MenuListProps={{ onMouseLeave: handleClose }}
               PaperProps={sxPaper}
-              elevation={0}>
-              <MenuItem
-                onClick={() => { handleClose(); setValue(1) }}
-                component={Link}
-                to='services'
-                sx={sxMenuItem}>
-                Services
-              </MenuItem>
-              <MenuItem
-                onClick={() => { handleClose(); setValue(1) }}
-                component={Link}
-                to='custom-software'
-                sx={sxMenuItem}>
-                Custom Software Development
-              </MenuItem>
-              <MenuItem
-                onClick={() => { handleClose(); setValue(1) }}
-                component={Link}
-                to='mobile-apps'
-                sx={sxMenuItem}>
-                Mobile App Development
-              </MenuItem>
-              <MenuItem
-                onClick={() => { handleClose(); setValue(1) }}
-                component={Link}
-                to='websites'
-                sx={sxMenuItem}>
-                Website Development
-              </MenuItem>
+              elevation={0}
+            >
+              {menuOptions.map((option, index) =>
+                <MenuItem
+                  key={option}
+                  onClick={(event) => {
+                    handleClose();
+                    setValue(1);
+                  }}
+                  component={Link}
+                  to={option.link}
+                  sx={sxMenuItem}
+                >
+                  {option.name}
+                </MenuItem>
+              )}
             </Menu>
           </Toolbar>
         </AppBar>
