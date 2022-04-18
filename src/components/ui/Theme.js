@@ -16,11 +16,6 @@ export default createTheme({
       main: `${arcOrange}`
     }
   },
-  mixins: {
-    toolbar: {
-      minHeight: '7em'
-    }
-  },
   typography: {
     estimate: {
       fontFamily: 'Pacifico',
