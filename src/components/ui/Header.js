@@ -57,8 +57,11 @@ const sxMenuItem = {
 const StyledSvg = styled('svg')(({ theme }) => ({
   height: '8em',
   textTransform: 'none',
-  [theme.breakpoints.down('md')]: {
+  [theme.breakpoints.down('lg')]: {
     height: '7em'
+  },
+  [theme.breakpoints.down('sm')]: {
+    height: '5.5em'
   }
 }))
 
@@ -73,7 +76,7 @@ export default function Header(props) {
   const [open, setOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const location = useLocation();
-  const matches = useMediaQuery(theme.breakpoints.down('md'));
+  const matches = useMediaQuery(theme.breakpoints.down('lg'));
 
   useEffect(() => {
     switch (location.pathname) {
