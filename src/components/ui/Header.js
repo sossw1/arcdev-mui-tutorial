@@ -1,5 +1,5 @@
 import { cloneElement, useState, useEffect } from 'react';
-import { AppBar, Button, CssBaseline, Menu, MenuItem, Tab, Tabs, Toolbar, useScrollTrigger } from '@mui/material';
+import { AppBar, Button, CssBaseline, Menu, MenuItem, Tab, Tabs, Toolbar, useMediaQuery, useScrollTrigger } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 
 import logo from '../../assets/logo.svg';
@@ -63,6 +63,7 @@ export default function Header(props) {
   const [open, setOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const location = useLocation();
+  const matches = useMediaQuery(theme.breakpoints.down('md'));
 
   useEffect(() => {
     switch (location.pathname) {
@@ -166,6 +167,85 @@ export default function Header(props) {
     }
   ];
 
+  const tabs = (
+    <>
+      <Tabs
+        value={value}
+        textColor={'secondary'}
+        onChange={handleChange}
+        sx={sxTabs}
+        aria-label="navigation tabs"
+      >
+        <Tab
+          sx={sxTab(0)}
+          component={Link}
+          to='/'
+          label='Home'
+          disableRipple
+        />
+        <Tab
+          sx={sxTab(1, true)}
+          component={Link}
+          to='/services'
+          label='Services'
+          disableRipple
+          aria-owns={anchorEl ? 'services-menu' : undefined}
+          aria-haspopup={anchorEl ? true : undefined}
+          onMouseOver={event => handleClick(event)}
+        />
+        <Tab
+          sx={sxTab(2)}
+          component={Link}
+          to='/revolution'
+          label='The Revolution'
+          disableRipple
+        />
+        <Tab
+          sx={sxTab(3)}
+          component={Link}
+          to='/about'
+          label='About Us'
+          disableRipple
+        />
+        <Tab
+          sx={sxTab(4)}
+          component={Link}
+          to='/contact'
+          label='Contact Us'
+          disableRipple
+        />
+      </Tabs>
+      <Button sx={sxButton} variant='contained' color='secondary'>
+        Free Estimate
+      </Button>
+      <Menu
+        id='services-menu'
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{ onMouseLeave: handleClose }}
+        PaperProps={sxPaper}
+        elevation={0}
+      >
+        {menuOptions.map((option, index) =>
+          <MenuItem
+            key={option}
+            onClick={(event) => {
+              handleMenuItemClick(event, index);
+              setValue(1);
+            }}
+            selected={index === selectedIndex && value === 1}
+            component={Link}
+            to={option.link}
+            sx={sxMenuItem}
+          >
+            {option.name}
+          </MenuItem>
+        )}
+      </Menu>
+    </>
+  )
+
   return (
     <>
       <CssBaseline />
@@ -180,80 +260,7 @@ export default function Header(props) {
             >
               <img alt='company logo' src={logo} style={styleLogoImage} />
             </Button>
-            <Tabs
-              value={value}
-              textColor={'secondary'}
-              onChange={handleChange}
-              sx={sxTabs}
-              aria-label="navigation tabs"
-            >
-              <Tab
-                sx={sxTab(0)}
-                component={Link}
-                to='/'
-                label='Home'
-                disableRipple
-              />
-              <Tab
-                sx={sxTab(1, true)}
-                component={Link}
-                to='/services'
-                label='Services'
-                disableRipple
-                aria-owns={anchorEl ? 'services-menu' : undefined}
-                aria-haspopup={anchorEl ? true : undefined}
-                onMouseOver={event => handleClick(event)}
-              />
-              <Tab
-                sx={sxTab(2)}
-                component={Link}
-                to='/revolution'
-                label='The Revolution'
-                disableRipple
-              />
-              <Tab
-                sx={sxTab(3)}
-                component={Link}
-                to='/about'
-                label='About Us'
-                disableRipple
-              />
-              <Tab
-                sx={sxTab(4)}
-                component={Link}
-                to='/contact'
-                label='Contact Us'
-                disableRipple
-              />
-            </Tabs>
-            <Button sx={sxButton} variant='contained' color='secondary'>
-              Free Estimate
-            </Button>
-            <Menu
-              id='services-menu'
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              MenuListProps={{ onMouseLeave: handleClose }}
-              PaperProps={sxPaper}
-              elevation={0}
-            >
-              {menuOptions.map((option, index) =>
-                <MenuItem
-                  key={option}
-                  onClick={(event) => {
-                    handleMenuItemClick(event, index);
-                    setValue(1);
-                  }}
-                  selected={index === selectedIndex && value === 1}
-                  component={Link}
-                  to={option.link}
-                  sx={sxMenuItem}
-                >
-                  {option.name}
-                </MenuItem>
-              )}
-            </Menu>
+            {matches ? null : tabs}
           </Toolbar>
         </AppBar>
       </ElevationScroll>
