@@ -22,7 +22,7 @@ const sxLogoButton = {
 }
 
 const styleLogoImage = {
-  height: '8em',
+  height: '7em',
   textTransform: 'none'
 }
 
@@ -35,7 +35,8 @@ const sxButton = {
   borderRadius: '50px',
   ml: '3.5rem',
   mr: '1.75rem',
-  height: '45px'
+  height: '45px',
+  lineHeight: '1rem'
 }
 
 const sxPaper = {
