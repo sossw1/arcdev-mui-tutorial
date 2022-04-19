@@ -267,6 +267,11 @@ export default function Header(props) {
         open={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
         onOpen={() => setIsDrawerOpen(true)}
+        PaperProps={{
+          sx: {
+            backgroundColor: 'common.blue'
+          }
+        }}
       >
         <List disablePadding>
           <ListItem
@@ -276,7 +281,12 @@ export default function Header(props) {
             button
             onClick={() => setIsDrawerOpen(false)}
           >
-            <ListItemText disableTypography>Home</ListItemText>
+            <ListItemText
+              disableTypography
+              sx={{
+                ...theme.typography.tab
+              }}
+            >Home</ListItemText>
           </ListItem>
           <ListItem
             component={Link}
@@ -285,7 +295,12 @@ export default function Header(props) {
             button
             onClick={() => setIsDrawerOpen(false)}
           >
-            <ListItemText disableTypography>Services</ListItemText>
+            <ListItemText
+              disableTypography
+              sx={{
+                ...theme.typography.tab
+              }}
+            >Services</ListItemText>
           </ListItem>
           <ListItem
             component={Link}
@@ -294,7 +309,12 @@ export default function Header(props) {
             button
             onClick={() => setIsDrawerOpen(false)}
           >
-            <ListItemText disableTypography>The Revolution</ListItemText>
+            <ListItemText
+              disableTypography
+              sx={{
+                ...theme.typography.tab
+              }}
+            >The Revolution</ListItemText>
           </ListItem>
           <ListItem
             component={Link}
@@ -303,7 +323,12 @@ export default function Header(props) {
             button
             onClick={() => setIsDrawerOpen(false)}
           >
-            <ListItemText disableTypography>About Us</ListItemText>
+            <ListItemText
+              disableTypography
+              sx={{
+                ...theme.typography.tab
+              }}
+            >About Us</ListItemText>
           </ListItem><ListItem
             component={Link}
             to='/contact'
@@ -311,7 +336,12 @@ export default function Header(props) {
             button
             onClick={() => setIsDrawerOpen(false)}
           >
-            <ListItemText disableTypography>Contact</ListItemText>
+            <ListItemText
+              disableTypography
+              sx={{
+                ...theme.typography.tab
+              }}
+            >Contact</ListItemText>
           </ListItem>
           <ListItem
             component={Link}
@@ -319,8 +349,19 @@ export default function Header(props) {
             divider
             button
             onClick={() => setIsDrawerOpen(false)}
+            sx={{
+              backgroundColor: 'secondary.main',
+              '&:hover': {
+                backgroundColor: '#FFBA60dd'
+              }
+            }}
           >
-            <ListItemText disableTypography>Free Estimate</ListItemText>
+            <ListItemText
+              disableTypography
+              sx={{
+                ...theme.typography.tab
+              }}
+            >Free Estimate</ListItemText>
           </ListItem>
         </List>
       </SwipeableDrawer>
