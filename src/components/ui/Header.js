@@ -67,7 +67,13 @@ const StyledSvg = styled('svg')(({ theme }) => ({
 
 const Offset = styled('div')(({ theme }) => ({
   ...theme.mixins.toolbar,
-  marginBottom: '3em'
+  marginBottom: '3em',
+  [theme.breakpoints.down('lg')]: {
+    marginBottom: '2em'
+  },
+  [theme.breakpoints.down('sm')]: {
+    marginBottom: '1.25em'
+  }
 }));
 
 export default function Header(props) {
