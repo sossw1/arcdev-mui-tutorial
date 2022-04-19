@@ -28,8 +28,8 @@ const sxTabs = {
 const sxButton = {
   ...theme.typography.estimate,
   borderRadius: '50px',
-  ml: '3.5rem',
-  mr: '1.75rem',
+  ml: '25px',
+  mr: '25px',
   height: '45px',
   lineHeight: '1rem'
 }
@@ -224,7 +224,7 @@ export default function Header(props) {
           sx={sxTab(4)}
           component={Link}
           to='/contact'
-          label='Contact Us'
+          label='Contact'
           disableRipple
         />
       </Tabs>
