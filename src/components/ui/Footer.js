@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 
 const StyledFooter = styled('footer')(({ theme }) => ({
   width: '100%',
@@ -23,7 +24,8 @@ const GridLink = styled(Grid)(({ theme }) => ({
   color: theme.palette.common.white,
   fontFamily: 'Arial',
   fontSize: '0.75rem',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  textDecoration: 'none'
 }))
 
 export default function Footer() {
@@ -38,39 +40,35 @@ export default function Footer() {
       >
         <Grid item sx={{ m: '3em' }}>
           <Grid container spacing={2} direction='column'>
-            <GridLink item>
-              Home
-            </GridLink>
+            <GridLink item component={Link} to='/'>Home</GridLink>
           </Grid>
         </Grid>
         <Grid item sx={{ m: '3em' }}>
           <Grid container spacing={2} direction='column'>
-            <GridLink item>Services</GridLink>
-            <GridLink item>Custom Software Development</GridLink>
-            <GridLink item>Mobile App Development</GridLink>
-            <GridLink item>Website Development</GridLink>
+            <GridLink item component={Link} to='/services'>Services</GridLink>
+            <GridLink item component={Link} to='/custom-software'>Custom Software Development</GridLink>
+            <GridLink item component={Link} to='/mobile-apps'>Mobile App Development</GridLink>
+            <GridLink item component={Link} to='/websites'>Website Development</GridLink>
           </Grid>
         </Grid>
         <Grid item sx={{ m: '3em' }}>
           <Grid container spacing={2} direction='column'>
-            <GridLink item>The Revolution</GridLink>
-            <GridLink item>Vision</GridLink>
-            <GridLink item>Technology</GridLink>
-            <GridLink item>Process</GridLink>
+            <GridLink item component={Link} to='/revolution'>The Revolution</GridLink>
+            <GridLink item component={Link} to='/revolution'>Vision</GridLink>
+            <GridLink item component={Link} to='/revolution'>Technology</GridLink>
+            <GridLink item component={Link} to='/revolution'>Process</GridLink>
           </Grid>
         </Grid>
         <Grid item sx={{ m: '3em' }}>
           <Grid container spacing={2} direction='column'>
-            <GridLink item>About Us</GridLink>
-            <GridLink item>History</GridLink>
-            <GridLink item>Team</GridLink>
+            <GridLink item component={Link} to='/about'>About Us</GridLink>
+            <GridLink item component={Link} to='/about'>History</GridLink>
+            <GridLink item component={Link} to='/about'>Team</GridLink>
           </Grid>
         </Grid>
         <Grid item sx={{ m: '3em' }}>
           <Grid container spacing={2} direction='column'>
-            <GridLink item>
-              Contact
-            </GridLink>
+            <GridLink item component={Link} to='/contact'>Contact</GridLink>
           </Grid>
         </Grid>
       </Grid>
