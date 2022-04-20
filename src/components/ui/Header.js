@@ -227,6 +227,7 @@ export default function Header(props) {
             borderRadius: 0
           }
         }}
+        sx={{ zIndex: 1301 }}
         elevation={0}
         keepMounted
       >
