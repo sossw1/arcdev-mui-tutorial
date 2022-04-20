@@ -46,10 +46,9 @@ export default function Header(props) {
   const iOS = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [value, setValue] = useState(0);
   const [menuAnchorEl, setMenuAnchorEl] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectedMenuIndex, setSelectedMenuIndex] = useState(0);
+  const { value, setValue, selectedMenuIndex, setSelectedMenuIndex } = props;
 
   useEffect(() => {
     switch (location.pathname) {
@@ -100,7 +99,7 @@ export default function Header(props) {
       default:
         break;
     }
-  }, [location.pathname, value]);
+  }, [location.pathname, value, setValue, setSelectedMenuIndex]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
