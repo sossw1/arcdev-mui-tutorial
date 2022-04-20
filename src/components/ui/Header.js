@@ -229,6 +229,7 @@ export default function Header(props) {
           }
         }}
         elevation={0}
+        keepMounted
       >
         {menuOptions.map((option, index) =>
           <MenuItem
