@@ -30,5 +30,8 @@ export default createTheme({
       textTransform: 'none',
       color: 'common.white',
     }
+  },
+  zIndex: {
+    appBar: 1301
   }
 });

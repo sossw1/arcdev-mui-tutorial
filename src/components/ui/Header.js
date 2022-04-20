@@ -301,6 +301,7 @@ export default function Header(props) {
           }
         }}
       >
+        <Offset />
         <List disablePadding>
           {listItems.map((item, index) => (
             <ListItem
