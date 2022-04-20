@@ -5,9 +5,15 @@ const StyledFooter = styled('footer')(({ theme }) => ({
   backgroundColor: theme.palette.common.blue
 }))
 
-const StyledSvg = styled('svg')(() => ({
+const StyledSvg = styled('svg')(({ theme }) => ({
   width: '25em',
-  verticalAlign: 'bottom'
+  verticalAlign: 'bottom',
+  [theme.breakpoints.down('lg')]: {
+    width: '21em'
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: '15em'
+  }
 }))
 
 export default function Footer() {
