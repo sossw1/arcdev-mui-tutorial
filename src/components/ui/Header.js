@@ -233,7 +233,7 @@ export default function Header(props) {
       >
         {menuOptions.map((option, index) =>
           <MenuItem
-            key={option}
+            key={`${option}-${index}`}
             onClick={(event) => {
               handleMenuItemClick(event, index);
               setValue(1);
@@ -304,7 +304,7 @@ export default function Header(props) {
         <List disablePadding>
           {listItems.map((item, index) => (
             <ListItem
-              key={index}
+              key={`${item}-${index}`}
               component={Link}
               to={item.link}
               divider
