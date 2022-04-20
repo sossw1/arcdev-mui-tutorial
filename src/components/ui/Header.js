@@ -1,5 +1,5 @@
 import { cloneElement, useState, useEffect } from 'react';
-import { AppBar, Button, CssBaseline, IconButton, List, ListItem, ListItemText, Menu, MenuItem, SwipeableDrawer, Tab, Tabs, Toolbar, useMediaQuery, useScrollTrigger } from '@mui/material';
+import { AppBar, Button, CssBaseline, IconButton, List, ListItem, ListItemButton, ListItemText, Menu, MenuItem, SwipeableDrawer, Tab, Tabs, Toolbar, useMediaQuery, useScrollTrigger } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
 import { Link, useLocation } from 'react-router-dom';
@@ -46,7 +46,7 @@ export default function Header(props) {
   const iOS = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [tabValue, setTabValue] = useState(0);
+  const [value, setValue] = useState(0);
   const [menuAnchorEl, setMenuAnchorEl] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedMenuIndex, setSelectedMenuIndex] = useState(0);
@@ -54,56 +54,56 @@ export default function Header(props) {
   useEffect(() => {
     switch (location.pathname) {
       case '/':
-        if (tabValue !== 0) {
-          setTabValue(0);
+        if (value !== 0) {
+          setValue(0);
         }
         break;
       case '/services':
-        if (tabValue !== 1) {
-          setTabValue(1);
+        if (value !== 1) {
+          setValue(1);
           setSelectedMenuIndex(0);
         }
         break;
       case '/custom-software':
-        if (tabValue !== 1) {
-          setTabValue(1);
+        if (value !== 1) {
+          setValue(1);
           setSelectedMenuIndex(1);
         }
         break;
       case '/mobile-apps':
-        if (tabValue !== 1) {
-          setTabValue(1);
+        if (value !== 1) {
+          setValue(1);
           setSelectedMenuIndex(2);
         }
         break;
       case '/websites':
-        if (tabValue !== 1) {
-          setTabValue(1);
+        if (value !== 1) {
+          setValue(1);
           setSelectedMenuIndex(3);
         }
         break;
       case '/revolution':
-        if (tabValue !== 2) {
-          setTabValue(2);
+        if (value !== 2) {
+          setValue(2);
         }
         break;
       case '/about':
-        if (tabValue !== 3) {
-          setTabValue(3);
+        if (value !== 3) {
+          setValue(3);
         }
         break;
       case '/contact':
-        if (tabValue !== 4) {
-          setTabValue(4);
+        if (value !== 4) {
+          setValue(4);
         }
         break;
       default:
         break;
     }
-  }, [location.pathname, tabValue]);
+  }, [location.pathname, value]);
 
   const handleChange = (event, newValue) => {
-    setTabValue(newValue);
+    setValue(newValue);
   }
 
   const handleClick = (event) => {
@@ -146,7 +146,7 @@ export default function Header(props) {
       ...theme.typography.tab,
       minWidth: 10,
       ml: '1.5rem',
-      opacity: (tabValue === val ? 1 : 0.7),
+      opacity: (value === val ? 1 : 0.7),
       '&:hover': {
         opacity: (opaqueOnHover ? 0.7 : 1)
       }
@@ -156,7 +156,7 @@ export default function Header(props) {
   const tabs = (
     <>
       <Tabs
-        value={tabValue}
+        value={value}
         textColor={'secondary'}
         onChange={handleChange}
         sx={{ ml: 'auto' }}
@@ -235,9 +235,9 @@ export default function Header(props) {
             key={option}
             onClick={(event) => {
               handleMenuItemClick(event, index);
-              setTabValue(1);
+              setValue(1);
             }}
-            selected={index === selectedMenuIndex && tabValue === 1}
+            selected={index === selectedMenuIndex && value === 1}
             component={Link}
             to={option.link}
             sx={{
@@ -259,6 +259,33 @@ export default function Header(props) {
     </>
   )
 
+  const listItems = [
+    {
+      name: 'Home',
+      link: '/'
+    },
+    {
+      name: 'Services',
+      link: '/services'
+    },
+    {
+      name: 'The Revolution',
+      link: '/revolution'
+    },
+    {
+      name: 'About Us',
+      link: '/about'
+    },
+    {
+      name: 'Contact',
+      link: '/contact'
+    },
+    {
+      name: 'Free Estimate',
+      link: '/estimate'
+    }
+  ]
+
   const drawer = (
     <>
       <SwipeableDrawer
@@ -273,96 +300,41 @@ export default function Header(props) {
           }
         }}
       >
-        <List disablePadding>
-          <ListItem
-            component={Link}
-            to='/'
-            divider
-            button
-            onClick={() => setIsDrawerOpen(false)}
-          >
-            <ListItemText
-              disableTypography
+        <List>
+          {listItems.map((item, index) => (
+            <ListItem
+              key={index}
+              component={Link}
+              to={item.link}
+              divider
+              disablePadding
               sx={{
-                ...theme.typography.tab
+                ...(index === 5 && {
+                  backgroundColor: 'secondary.main',
+                  '&:hover': {
+                    backgroundColor: '#FFBA60dd'
+                  },
+                  '& .Mui-selected': {
+                    color: 'common.blue'
+                  }
+                })
               }}
-            >Home</ListItemText>
-          </ListItem>
-          <ListItem
-            component={Link}
-            to='/services'
-            divider
-            button
-            onClick={() => setIsDrawerOpen(false)}
-          >
-            <ListItemText
-              disableTypography
-              sx={{
-                ...theme.typography.tab
-              }}
-            >Services</ListItemText>
-          </ListItem>
-          <ListItem
-            component={Link}
-            to='/revolution'
-            divider
-            button
-            onClick={() => setIsDrawerOpen(false)}
-          >
-            <ListItemText
-              disableTypography
-              sx={{
-                ...theme.typography.tab
-              }}
-            >The Revolution</ListItemText>
-          </ListItem>
-          <ListItem
-            component={Link}
-            to='/about'
-            divider
-            button
-            onClick={() => setIsDrawerOpen(false)}
-          >
-            <ListItemText
-              disableTypography
-              sx={{
-                ...theme.typography.tab
-              }}
-            >About Us</ListItemText>
-          </ListItem><ListItem
-            component={Link}
-            to='/contact'
-            divider
-            button
-            onClick={() => setIsDrawerOpen(false)}
-          >
-            <ListItemText
-              disableTypography
-              sx={{
-                ...theme.typography.tab
-              }}
-            >Contact</ListItemText>
-          </ListItem>
-          <ListItem
-            component={Link}
-            to='/estimate'
-            divider
-            button
-            onClick={() => setIsDrawerOpen(false)}
-            sx={{
-              backgroundColor: 'secondary.main',
-              '&:hover': {
-                backgroundColor: '#FFBA60dd'
-              }
-            }}
-          >
-            <ListItemText
-              disableTypography
-              sx={{
-                ...theme.typography.tab
-              }}
-            >Free Estimate</ListItemText>
-          </ListItem>
+            >
+              <ListItemButton
+                selected={value === index}
+                onClick={() => { setIsDrawerOpen(false); setValue(index) }}
+                disableRipple
+                sx={{
+                  ...theme.typography.tab,
+                  '&.Mui-selected': {
+                    color: 'secondary.main'
+                  }
+                }}
+              >
+                <ListItemText disableTypography>{item.name}</ListItemText>
+              </ListItemButton>
+            </ListItem>
+          ))}
         </List>
       </SwipeableDrawer>
       <IconButton
