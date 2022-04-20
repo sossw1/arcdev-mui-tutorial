@@ -310,13 +310,7 @@ export default function Header(props) {
               disablePadding
               sx={{
                 ...(index === 5 && {
-                  backgroundColor: 'secondary.main',
-                  '&:hover': {
-                    backgroundColor: '#FFBA60dd'
-                  },
-                  '& .Mui-selected': {
-                    color: 'common.blue'
-                  }
+                  backgroundColor: 'secondary.main'
                 })
               }}
             >
@@ -326,8 +320,12 @@ export default function Header(props) {
                 disableRipple
                 sx={{
                   ...theme.typography.tab,
+                  opacity: 0.7,
                   '&.Mui-selected': {
-                    color: 'secondary.main'
+                    opacity: 1
+                  },
+                  '&:hover': {
+                    opacity: 1
                   }
                 }}
               >
