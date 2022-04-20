@@ -2,7 +2,9 @@ import { styled } from '@mui/material/styles';
 
 const StyledFooter = styled('footer')(({ theme }) => ({
   width: '100%',
-  backgroundColor: theme.palette.common.blue
+  backgroundColor: theme.palette.common.blue,
+  zIndex: 1301,
+  position: 'relative'
 }))
 
 const StyledSvg = styled('svg')(({ theme }) => ({
