@@ -28,7 +28,8 @@ const GridLink = styled(Grid)(({ theme }) => ({
   textDecoration: 'none'
 }))
 
-export default function Footer() {
+export default function Footer(props) {
+  const { setValue, setSelectedMenuIndex } = props;
   return (
     <StyledFooter>
       <Grid
@@ -40,35 +41,124 @@ export default function Footer() {
       >
         <Grid item sx={{ m: '3em' }}>
           <Grid container spacing={2} direction='column'>
-            <GridLink item component={Link} to='/'>Home</GridLink>
+            <GridLink
+              item
+              component={Link}
+              onClick={() => setValue(0)}
+              to='/'
+            >Home</GridLink>
           </Grid>
         </Grid>
         <Grid item sx={{ m: '3em' }}>
           <Grid container spacing={2} direction='column'>
-            <GridLink item component={Link} to='/services'>Services</GridLink>
-            <GridLink item component={Link} to='/custom-software'>Custom Software Development</GridLink>
-            <GridLink item component={Link} to='/mobile-apps'>Mobile App Development</GridLink>
-            <GridLink item component={Link} to='/websites'>Website Development</GridLink>
+            <GridLink
+              item
+              component={Link}
+              onClick={() => { setValue(1); setSelectedMenuIndex(0) }}
+              to='/services'
+            >
+              Services
+            </GridLink>
+            <GridLink
+              item
+              component={Link}
+              onClick={() => { setValue(1); setSelectedMenuIndex(1); }}
+              to='/custom-software'
+            >
+              Custom Software Development
+            </GridLink>
+            <GridLink
+              item
+              component={Link}
+              onClick={() => { setValue(1); setSelectedMenuIndex(2) }}
+              to='/mobile-apps'
+            >
+              Mobile App Development
+            </GridLink>
+            <GridLink
+              item
+              component={Link}
+              onClick={() => { setValue(1); setSelectedMenuIndex(3) }}
+              to='/websites'
+            >
+              Website Development
+            </GridLink>
           </Grid>
         </Grid>
         <Grid item sx={{ m: '3em' }}>
           <Grid container spacing={2} direction='column'>
-            <GridLink item component={Link} to='/revolution'>The Revolution</GridLink>
-            <GridLink item component={Link} to='/revolution'>Vision</GridLink>
-            <GridLink item component={Link} to='/revolution'>Technology</GridLink>
-            <GridLink item component={Link} to='/revolution'>Process</GridLink>
+            <GridLink
+              item
+              component={Link}
+              onClick={() => setValue(2)}
+              to='/revolution'
+            >
+              The Revolution
+            </GridLink>
+            <GridLink
+              item
+              component={Link}
+              onClick={() => setValue(2)}
+              to='/revolution'
+            >
+              Vision
+            </GridLink>
+            <GridLink
+              item
+              component={Link}
+              onClick={() => setValue(2)}
+              to='/revolution'
+            >
+              Technology
+            </GridLink>
+            <GridLink
+              item
+              component={Link}
+              onClick={() => setValue(2)}
+              to='/revolution'
+            >
+              Process
+            </GridLink>
           </Grid>
         </Grid>
         <Grid item sx={{ m: '3em' }}>
           <Grid container spacing={2} direction='column'>
-            <GridLink item component={Link} to='/about'>About Us</GridLink>
-            <GridLink item component={Link} to='/about'>History</GridLink>
-            <GridLink item component={Link} to='/about'>Team</GridLink>
+            <GridLink
+              item
+              component={Link}
+              onClick={() => setValue(3)}
+              to='/about'
+            >
+              About Us
+            </GridLink>
+            <GridLink
+              item
+              component={Link}
+              onClick={() => setValue(3)}
+              to='/about'
+            >
+              History
+            </GridLink>
+            <GridLink
+              item
+              component={Link}
+              onClick={() => setValue(3)}
+              to='/about'
+            >
+              Team
+            </GridLink>
           </Grid>
         </Grid>
         <Grid item sx={{ m: '3em' }}>
           <Grid container spacing={2} direction='column'>
-            <GridLink item component={Link} to='/contact'>Contact</GridLink>
+            <GridLink
+              item
+              component={Link}
+              onClick={() => setValue(4)}
+              to='/contact'
+            >
+              Contact
+            </GridLink>
           </Grid>
         </Grid>
       </Grid>
