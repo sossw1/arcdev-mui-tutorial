@@ -300,7 +300,7 @@ export default function Header(props) {
           }
         }}
       >
-        <List>
+        <List disablePadding>
           {listItems.map((item, index) => (
             <ListItem
               key={index}
