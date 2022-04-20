@@ -1,3 +1,4 @@
+import { Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const StyledFooter = styled('footer')(({ theme }) => ({
@@ -16,6 +17,13 @@ const StyledSvg = styled('svg')(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     width: '15em'
   }
+}))
+
+const GridLink = styled(Grid)(({ theme }) => ({
+  color: theme.palette.common.white,
+  fontFamily: 'Arial',
+  fontSize: '0.75rem',
+  fontWeight: 'bold'
 }))
 
 export default function Footer() {
