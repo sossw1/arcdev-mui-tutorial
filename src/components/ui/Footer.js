@@ -1,6 +1,8 @@
 import { Grid, Hidden } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
+
+import theme from './Theme';
 import facebook from '../../assets/facebook.svg';
 import twitter from '../../assets/twitter.svg';
 import instagram from '../../assets/instagram.svg';
@@ -31,9 +33,13 @@ const GridLink = styled(Grid)(({ theme }) => ({
   textDecoration: 'none'
 }))
 
-const SocialLogo = styled('img')(() => ({
+const SocialLogo = styled('img')(({ theme }) => ({
   height: '4em',
-  width: '4em'
+  width: '4em',
+  [theme.breakpoints.down('sm')]: {
+    height: '2.5em',
+    width: '2.5em'
+  }
 }))
 
 export default function Footer(props) {
@@ -180,7 +186,10 @@ export default function Footer(props) {
           position: 'absolute',
           mt: '-6em',
           right: '1.5em',
-          justifyContent: 'flex-end'
+          justifyContent: 'flex-end',
+          [theme.breakpoints.down('sm')]: {
+            right: '0.6em'
+          }
         }}
       >
         <Grid
