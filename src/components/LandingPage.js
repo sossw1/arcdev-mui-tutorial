@@ -45,8 +45,16 @@ export default function LandingPage() {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item sm>
-            <Lottie options={defaultOptions} height={'100%'} width={'100%'} />
+          <Grid item sm sx={{ marginTop: '2em', marginLeft: '10%' }}>
+            <Lottie
+              style={{
+                minWidth: '20em',
+                maxWidth: '50em'
+              }}
+              options={defaultOptions}
+              height={'100%'}
+              width={'100%'}
+            />
           </Grid>
         </Grid>
       </Grid>
