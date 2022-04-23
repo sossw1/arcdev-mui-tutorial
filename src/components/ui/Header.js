@@ -207,7 +207,10 @@ export default function Header(props) {
           ml: '25px',
           mr: '25px',
           height: '45px',
-          lineHeight: '1rem'
+          lineHeight: '1rem',
+          '&:hover': {
+            backgroundColor: theme.palette.secondary.light
+          }
         }}
         variant='contained'
         color='secondary'
