@@ -3,6 +3,7 @@ import { Button, Grid, Typography } from '@mui/material';
 
 import animationData from '../animations/landinganimation/data';
 import ButtonArrow from './ui/ButtonArrow';
+import theme from './ui/Theme';
 
 export default function LandingPage() {
   const defaultOptions = {
@@ -33,14 +34,43 @@ export default function LandingPage() {
               Bringing West Coast Technology<br />
               to the Midwest
             </Typography>
-            <Grid container>
+            <Grid container justifyContent='center' sx={{ mt: '1em' }}>
               <Grid item>
-                <Button variant='contained'>Free Estimate</Button>
+                <Button
+                  variant='contained'
+                  sx={{
+                    ...theme.typography.estimate,
+                    backgroundColor: theme.palette.secondary.main,
+                    borderRadius: 50,
+                    height: '45px',
+                    width: '145px',
+                    marginRight: '40px',
+                    '&:hover': {
+                      backgroundColor: theme.palette.secondary.light
+                    }
+                  }}
+                >
+                  Free Estimate
+                </Button>
               </Grid>
               <Grid item>
-                <Button variant='outlined'>
-                  Learn More
-                  <ButtonArrow width={15} height={15} fill='red'></ButtonArrow>
+                <Button
+                  variant='outlined'
+                  sx={{
+                    borderColor: theme.palette.common.blue,
+                    color: theme.palette.common.blue,
+                    borderWidth: '2px',
+                    textTransform: 'none',
+                    borderRadius: '50px',
+                    fontFamily: 'Roboto',
+                    fontWeight: 'bold',
+                    fontSize: '0.9rem',
+                    height: '45px',
+                    width: '145px'
+                  }}
+                >
+                  <span style={{ marginRight: '5px', marginLeft: '5px' }}>Learn More</span>
+                  <ButtonArrow width={15} height={15} fill={theme.palette.common.blue}></ButtonArrow>
                 </Button>
               </Grid>
             </Grid>
