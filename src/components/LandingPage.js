@@ -16,7 +16,19 @@ export default function LandingPage() {
   }
 
   return (
-    <Grid container direction='column'>
+    <Grid
+      container
+      direction='column'
+      sx={{
+        mt: '5em',
+        [theme.breakpoints.down('lg')]: {
+          mt: '3em'
+        },
+        [theme.breakpoints.down('sm')]: {
+          mt: '2em'
+        }
+      }}
+    >
       <Grid item>
         <Grid container direction='row' justifyContent='flex-end' alignItems='center'>
           <Grid item sm>
