@@ -2,6 +2,7 @@ import Lottie from 'react-lottie';
 import { Button, Grid, Typography } from '@mui/material';
 
 import animationData from '../animations/landinganimation/data';
+import ButtonArrow from './ui/ButtonArrow';
 
 export default function LandingPage() {
   const defaultOptions = {
@@ -26,9 +27,14 @@ export default function LandingPage() {
                 <Button variant='contained'>Free Estimate</Button>
               </Grid>
               <Grid item>
-                <Button variant='outlined'>Learn More</Button>
+                <Button variant='outlined'>
+                  Learn More
+                  <ButtonArrow width={15} height={15} fill='red'></ButtonArrow>
+                </Button>
               </Grid>
             </Grid>
+          </Grid>
+          <Grid item>
             <Lottie options={defaultOptions} height={'100%'} width={'100%'} />
           </Grid>
         </Grid>
