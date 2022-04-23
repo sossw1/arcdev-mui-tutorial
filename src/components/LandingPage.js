@@ -31,7 +31,17 @@ export default function LandingPage() {
     >
       <Grid item>
         <Grid container direction='row' justifyContent='flex-end' alignItems='center'>
-          <Grid item sm>
+          <Grid
+            item
+            sm
+            sx={{
+              minWidth: '21.5em',
+              ml: '1em',
+              [theme.breakpoints.down('sm')]: {
+                ml: 0
+              }
+            }}
+          >
             <Typography
               variant='h2'
               align='center'
@@ -87,7 +97,15 @@ export default function LandingPage() {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item sm sx={{ marginTop: '2em', marginLeft: '10%' }}>
+          <Grid
+            item
+            sm
+            sx={{
+              marginTop: '2em',
+              marginLeft: '10%',
+              [theme.breakpoints.down('md')]: { maxWidth: '30em' }
+            }}
+          >
             <Lottie
               style={{
                 minWidth: '20em',
@@ -100,6 +118,6 @@ export default function LandingPage() {
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </Grid >
   )
 };
