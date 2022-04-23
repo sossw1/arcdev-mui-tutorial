@@ -17,10 +17,21 @@ export default function LandingPage() {
   return (
     <Grid container direction='column'>
       <Grid item>
-        <Grid container direction='row'>
-          <Grid item>
-            <Typography>
-              Bringing West Coast Technology<br />to the Midwest
+        <Grid container direction='row' justifyContent='flex-end' alignItems='center'>
+          <Grid item sm>
+            <Typography
+              variant='h2'
+              align='center'
+              sx={{
+                fontFamily: 'Raleway',
+                fontWeight: 700,
+                fontSize: '2.5rem',
+                color: 'common.blue',
+                lineHeight: 1.5
+              }}
+            >
+              Bringing West Coast Technology<br />
+              to the Midwest
             </Typography>
             <Grid container>
               <Grid item>
@@ -34,7 +45,7 @@ export default function LandingPage() {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item>
+          <Grid item sm>
             <Lottie options={defaultOptions} height={'100%'} width={'100%'} />
           </Grid>
         </Grid>
