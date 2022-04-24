@@ -114,9 +114,15 @@ export default function LandingPage() {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item>{/*-----Services Block-----*/}
+      {/*-----Services Block-----*/}
+      <Grid
+        item
+        sx={{
+          mt: '12em'
+        }}
+      >
         <Grid container direction='row'>
-          <Grid item>
+          <Grid item sx={{ ml: '5em' }}>
             <Typography
               variant='h4'
               sx={{
@@ -128,7 +134,7 @@ export default function LandingPage() {
             >
               Custom Software Development
             </Typography>
-            <Typography variant='subtitle1' sx={{ ...theme.subtitle }}>
+            <Typography variant='subtitle1' sx={{ ...theme.subtitle, mb: '1em' }}>
               Save Energy. Save Time. Save Money.
             </Typography>
             <Typography variant='subtitle1' sx={{ ...theme.subtitle }}>
@@ -148,7 +154,15 @@ export default function LandingPage() {
               <ButtonArrow width={15} height={15} fill={theme.palette.common.blue}></ButtonArrow>
             </Button>
           </Grid>
-          <Grid item>
+          <Grid
+            item
+            sx={{
+              ml: '2em',
+              [theme.breakpoints.down('sm')]: {
+                ml: 0
+              }
+            }}
+          >
             <img alt='custom software icon' src={customSoftwareIcon} />
           </Grid>
         </Grid>
