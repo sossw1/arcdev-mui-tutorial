@@ -1,5 +1,5 @@
 import Lottie from 'react-lottie';
-import { Button, Grid, Typography } from '@mui/material';
+import { Button, Grid, Typography, useMediaQuery } from '@mui/material';
 
 import animationData from '../animations/landinganimation/data';
 import ButtonArrow from './ui/ButtonArrow';
@@ -16,6 +16,8 @@ export default function LandingPage() {
     }
   }
 
+  const isSmallAndDown = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
     <Grid
       container
@@ -30,7 +32,8 @@ export default function LandingPage() {
         }
       }}
     >
-      <Grid item> {/*-----Hero Block-----*/}
+      {/*-----Hero Block-----*/}
+      <Grid item>
         <Grid container direction='row' justifyContent='flex-end' alignItems='center'>
           <Grid
             item
@@ -121,8 +124,17 @@ export default function LandingPage() {
           mt: '12em'
         }}
       >
-        <Grid container direction='row'>
-          <Grid item sx={{ ml: '5em' }}>
+        <Grid container direction='row' justifyContent={isSmallAndDown ? 'center' : undefined}>
+          <Grid
+            item
+            sx={{
+              ml: isSmallAndDown ? 0 : '5em',
+              textAlign: isSmallAndDown ? 'center' : undefined,
+              [theme.breakpoints.down('md')]: {
+                padding: '25px'
+              }
+            }}
+          >
             <Typography
               variant='h4'
               sx={{
@@ -147,10 +159,15 @@ export default function LandingPage() {
                 ...theme.learnButton,
                 fontSize: '0.7rem',
                 height: '35px',
-                padding: '5px'
+                padding: '5px',
+                [theme.breakpoints.down('md')]: {
+                  mb: '2em'
+                }
               }}
             >
-              <span style={{ marginRight: '5px', marginLeft: '5px' }}>Learn More</span>
+              <span style={{ marginRight: '5px', marginLeft: '5px' }}>
+                Learn More
+              </span>
               <ButtonArrow width={15} height={15} fill={theme.palette.common.blue}></ButtonArrow>
             </Button>
           </Grid>
