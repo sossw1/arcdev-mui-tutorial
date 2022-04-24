@@ -122,15 +122,23 @@ export default function LandingPage() {
       <Grid item>{/*-----Services Block-----*/}
         <Grid container direction='row'>
           <Grid item>
-            <Typography variant='h4'>
+            <Typography
+              variant='h4'
+              sx={{
+                fontFamily: 'Raleway',
+                fontSize: '1.75rem',
+                color: theme.palette.common.blue,
+                fontWeight: 700
+              }}
+            >
               Custom Software Development
             </Typography>
-            <Typography variant='subtitle1'>
+            <Typography variant='subtitle1' sx={{ ...theme.subtitle }}>
               Save Energy. Save Time. Save Money.
             </Typography>
-            <Typography variant='subtitle1'>
+            <Typography variant='subtitle1' sx={{ ...theme.subtitle }}>
               Complete digital solutions, from investigation to{' '}
-              <span>celebration.</span>
+              <span style={{ fontFamily: 'Pacifico', color: theme.palette.common.orange }}>celebration.</span>
             </Typography>
             <Button
               variant='outlined'

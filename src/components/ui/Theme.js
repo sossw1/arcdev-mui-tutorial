@@ -2,6 +2,7 @@ import { createTheme } from '@mui/material';
 
 const arcBlue = '#0B72B9';
 const arcOrange = '#FFBA60';
+const arcGrey = '#868686'
 
 export default createTheme({
   palette: {
@@ -33,5 +34,10 @@ export default createTheme({
   },
   zIndex: {
     appBar: 1301
+  },
+  subtitle: {
+    fontSize: '1.25rem',
+    fontWeight: 300,
+    color: `${arcGrey}`
   }
 });
