@@ -3,6 +3,7 @@ import { Button, Grid, Typography } from '@mui/material';
 
 import animationData from '../animations/landinganimation/data';
 import ButtonArrow from './ui/ButtonArrow';
+import customSoftwareIcon from '../assets/Custom Software Icon.svg'
 import theme from './ui/Theme';
 
 export default function LandingPage() {
@@ -149,6 +150,9 @@ export default function LandingPage() {
               <span style={{ marginRight: '5px', marginLeft: '5px' }}>Learn More</span>
               <ButtonArrow width={15} height={15} fill={theme.palette.common.blue}></ButtonArrow>
             </Button>
+          </Grid>
+          <Grid item>
+            <img alt='custom software icon' src={customSoftwareIcon} />
           </Grid>
         </Grid>
       </Grid>
