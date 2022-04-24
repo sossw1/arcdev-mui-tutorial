@@ -80,19 +80,14 @@ export default function LandingPage() {
                 <Button
                   variant='outlined'
                   sx={{
-                    borderColor: theme.palette.common.blue,
-                    color: theme.palette.common.blue,
-                    borderWidth: '2px',
-                    textTransform: 'none',
-                    borderRadius: '50px',
-                    fontFamily: 'Roboto',
-                    fontWeight: 'bold',
-                    fontSize: '0.9rem',
+                    ...theme.learnButton,
                     height: '45px',
                     width: '145px'
                   }}
                 >
-                  <span style={{ marginRight: '5px', marginLeft: '5px' }}>Learn More</span>
+                  <span style={{ marginRight: '5px', marginLeft: '5px' }}>
+                    Learn More
+                  </span>
                   <ButtonArrow width={15} height={15} fill={theme.palette.common.blue}></ButtonArrow>
                 </Button>
               </Grid>
@@ -143,16 +138,10 @@ export default function LandingPage() {
             <Button
               variant='outlined'
               sx={{
-                borderColor: theme.palette.common.blue,
-                color: theme.palette.common.blue,
-                borderWidth: '2px',
-                textTransform: 'none',
-                borderRadius: '50px',
-                fontFamily: 'Roboto',
-                fontWeight: 'bold',
-                fontSize: '0.9rem',
-                height: '45px',
-                width: '145px'
+                ...theme.learnButton,
+                fontSize: '0.7rem',
+                height: '35px',
+                padding: '5px'
               }}
             >
               <span style={{ marginRight: '5px', marginLeft: '5px' }}>Learn More</span>

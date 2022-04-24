@@ -38,6 +38,15 @@ export default createTheme({
   subtitle: {
     fontSize: '1.25rem',
     fontWeight: 300,
-    color: `${arcGrey}`
+    color: arcGrey
+  },
+  learnButton: {
+    borderColor: 'common.blue',
+    color: 'common.blue',
+    borderWidth: '2px',
+    textTransform: 'none',
+    borderRadius: '50px',
+    fontFamily: 'Roboto',
+    fontWeight: 'bold',
   }
 });
