@@ -29,7 +29,7 @@ export default function LandingPage() {
         }
       }}
     >
-      <Grid item>
+      <Grid item> {/*-----Hero Block-----*/}
         <Grid container direction='row' justifyContent='flex-end' alignItems='center'>
           <Grid
             item
@@ -115,6 +115,40 @@ export default function LandingPage() {
               height={'100%'}
               width={'100%'}
             />
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid item>{/*-----Services Block-----*/}
+        <Grid container direction='row'>
+          <Grid item>
+            <Typography variant='h4'>
+              Custom Software Development
+            </Typography>
+            <Typography variant='subtitle1'>
+              Save Energy. Save Time. Save Money.
+            </Typography>
+            <Typography variant='subtitle1'>
+              Complete digital solutions, from investigation to{' '}
+              <span>celebration.</span>
+            </Typography>
+            <Button
+              variant='outlined'
+              sx={{
+                borderColor: theme.palette.common.blue,
+                color: theme.palette.common.blue,
+                borderWidth: '2px',
+                textTransform: 'none',
+                borderRadius: '50px',
+                fontFamily: 'Roboto',
+                fontWeight: 'bold',
+                fontSize: '0.9rem',
+                height: '45px',
+                width: '145px'
+              }}
+            >
+              <span style={{ marginRight: '5px', marginLeft: '5px' }}>Learn More</span>
+              <ButtonArrow width={15} height={15} fill={theme.palette.common.blue}></ButtonArrow>
+            </Button>
           </Grid>
         </Grid>
       </Grid>
