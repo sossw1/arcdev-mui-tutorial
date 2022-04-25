@@ -197,8 +197,9 @@ export default function LandingPage() {
             item
             sx={{
               ml: isSmallAndDown ? 0 : '5em',
-              textAlign: isSmallAndDown ? 'center' : undefined,
+              mr: isSmallAndDown ? 0 : '5em',
               [theme.breakpoints.down('md')]: {
+                textAlign: 'center',
                 padding: '25px'
               }
             }}
@@ -218,7 +219,7 @@ export default function LandingPage() {
               Extend Functionality. Extend Access. Increase Engagement.
             </Typography>
             <Typography variant='subtitle1' sx={{ ...theme.subtitle }}>
-              Integrate your web experience or create a standalone app{' '}{isSmallAndDown && <br />}with either mobile platform.
+              Integrate your web experience or create a standalone app {isSmallAndDown ? null : <br />}with either mobile platform.
             </Typography>
             <Button
               variant='outlined'
