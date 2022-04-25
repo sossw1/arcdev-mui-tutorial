@@ -196,6 +196,7 @@ export default function LandingPage() {
           <Grid
             item
             sx={{
+              ml: isSmallAndDown ? 0 : '5em',
               textAlign: isSmallAndDown ? 'center' : undefined,
               [theme.breakpoints.down('md')]: {
                 padding: '25px'
