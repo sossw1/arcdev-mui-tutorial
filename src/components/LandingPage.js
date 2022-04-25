@@ -4,6 +4,7 @@ import { Button, Grid, Typography, useMediaQuery } from '@mui/material';
 import animationData from '../animations/landinganimation/data';
 import ButtonArrow from './ui/ButtonArrow';
 import customSoftwareIcon from '../assets/Custom Software Icon.svg'
+import mobileAppsIcon from '../assets/mobileIcon.svg';
 import theme from './ui/Theme';
 
 export default function LandingPage() {
@@ -117,7 +118,7 @@ export default function LandingPage() {
           </Grid>
         </Grid>
       </Grid>
-      {/*-----Services Block-----*/}
+      {/*-----Custom Software Block-----*/}
       <Grid
         item
         sx={{
@@ -181,6 +182,72 @@ export default function LandingPage() {
             }}
           >
             <img alt='custom software icon' src={customSoftwareIcon} />
+          </Grid>
+        </Grid>
+      </Grid>
+      {/*-----iOS/Android Block-----*/}
+      <Grid
+        item
+        sx={{
+          mt: '12em'
+        }}
+      >
+        <Grid container direction='row' justifyContent={isSmallAndDown ? 'center' : 'flex-end'}>
+          <Grid
+            item
+            sx={{
+              ml: isSmallAndDown ? 0 : '5em',
+              textAlign: isSmallAndDown ? 'center' : undefined,
+              [theme.breakpoints.down('md')]: {
+                padding: '25px'
+              }
+            }}
+          >
+            <Typography
+              variant='h4'
+              sx={{
+                fontFamily: 'Raleway',
+                fontSize: '1.75rem',
+                color: theme.palette.common.blue,
+                fontWeight: 700
+              }}
+            >
+              iOS/Android App Development
+            </Typography>
+            <Typography variant='subtitle1' sx={{ ...theme.subtitle, mb: '1em' }}>
+              Extend Functionality. Extend Access. Increase Engagement.
+            </Typography>
+            <Typography variant='subtitle1' sx={{ ...theme.subtitle }}>
+              Integrate your web experience or create a standalone app{' '}{isSmallAndDown && <br />}with either mobile platform.
+            </Typography>
+            <Button
+              variant='outlined'
+              sx={{
+                ...theme.learnButton,
+                fontSize: '0.7rem',
+                height: '35px',
+                padding: '5px',
+                [theme.breakpoints.down('md')]: {
+                  mb: '2em'
+                }
+              }}
+            >
+              <span style={{ marginRight: '5px', marginLeft: '5px' }}>
+                Learn More
+              </span>
+              <ButtonArrow width={15} height={15} fill={theme.palette.common.blue}></ButtonArrow>
+            </Button>
+          </Grid>
+          <Grid
+            item
+            sx={{
+              ml: '2em',
+              [theme.breakpoints.down('sm')]: {
+                ml: 0
+              }
+            }}
+          >
+            <img alt='mobile phone icon' src={mobileAppsIcon} />
           </Grid>
         </Grid>
       </Grid>
