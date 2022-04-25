@@ -5,6 +5,7 @@ import animationData from '../animations/landinganimation/data';
 import ButtonArrow from './ui/ButtonArrow';
 import customSoftwareIcon from '../assets/Custom Software Icon.svg'
 import mobileAppsIcon from '../assets/mobileIcon.svg';
+import websitesIcon from '../assets/websiteIcon.svg';
 import theme from './ui/Theme';
 
 export default function LandingPage() {
@@ -250,6 +251,79 @@ export default function LandingPage() {
             }}
           >
             <img alt='mobile phone icon' src={mobileAppsIcon} />
+          </Grid>
+        </Grid>
+      </Grid>
+      {/*-----Websites Block-----*/}
+      <Grid
+        item
+        sx={{
+          mt: '12em'
+        }}
+      >
+        <Grid container direction='row' justifyContent={isSmallAndDown ? 'center' : undefined}>
+          <Grid
+            item
+            sx={{
+              ml: isSmallAndDown ? 0 : '5em',
+              textAlign: isSmallAndDown ? 'center' : undefined,
+              [theme.breakpoints.down('md')]: {
+                padding: '25px'
+              }
+            }}
+          >
+            <Typography
+              variant='h4'
+              sx={{
+                fontFamily: 'Raleway',
+                fontSize: '1.75rem',
+                color: theme.palette.common.blue,
+                fontWeight: 700
+              }}
+            >
+              Website Development
+            </Typography>
+            <Typography variant='subtitle1' sx={{ ...theme.subtitle, mb: '1em' }}>
+              Reach More. Discover More. Sell More.
+            </Typography>
+            <Typography variant='subtitle1' sx={{ ...theme.subtitle }}>
+              Optimized for Search Engines, built for speed.
+            </Typography>
+            <Button
+              variant='outlined'
+              sx={{
+                ...theme.learnButton,
+                fontSize: '0.7rem',
+                height: '35px',
+                padding: '5px',
+                [theme.breakpoints.down('md')]: {
+                  mb: '2em'
+                }
+              }}
+            >
+              <span style={{ marginRight: '5px', marginLeft: '5px' }}>
+                Learn More
+              </span>
+              <ButtonArrow width={15} height={15} fill={theme.palette.common.blue}></ButtonArrow>
+            </Button>
+          </Grid>
+          <Grid
+            item
+            sx={{
+              ml: '2em',
+              [theme.breakpoints.down('sm')]: {
+                ml: 0
+              },
+              mb: '5em',
+              [theme.breakpoints.down('lg')]: {
+                mb: '3em'
+              },
+              [theme.breakpoints.down('sm')]: {
+                mb: '2em'
+              }
+            }}
+          >
+            <img alt='website icon' src={websitesIcon} />
           </Grid>
         </Grid>
       </Grid>
