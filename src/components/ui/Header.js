@@ -131,7 +131,7 @@ export default function Header(props) {
       link: '/custom-software'
     },
     {
-      name: 'Mobile App Development',
+      name: 'iOS/Android App Development',
       link: 'mobile-apps'
     },
     {

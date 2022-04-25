@@ -88,7 +88,7 @@ export default function Footer(props) {
                 onClick={() => { setValue(1); setSelectedMenuIndex(2) }}
                 to='/mobile-apps'
               >
-                Mobile App Development
+                iOS/Android App Development
               </GridLink>
               <GridLink
                 item
