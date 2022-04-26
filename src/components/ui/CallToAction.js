@@ -1,11 +1,14 @@
-import { Button, Grid, Typography } from '@mui/material';
+import { Button, Grid, useMediaQuery, Typography } from '@mui/material';
 import ButtonArrow from './ButtonArrow';
 
 import background from '../../assets/background.jpg';
 import mobileBackground from '../../assets/mobileBackground.jpg';
 import theme from './Theme';
 
+
 export default function CallToAction() {
+  const isMedAndDown = useMediaQuery(theme.breakpoints.down('lg'));
+
   return (
     <Grid container style={{ height: '60em' }}>
       <Grid item style={{ position: 'absolute' }}>
@@ -56,15 +59,12 @@ export default function CallToAction() {
         </Grid>
       </Grid>
       <div style={{
-        backgroundImage: `url(${background})`,
+        backgroundImage: `url(${isMedAndDown ? mobileBackground : background})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         height: '100%',
         width: '100%',
-        [theme.breakpoints.down('lg')]: {
-          backgroundImage: `url(${mobileBackground})`
-        }
       }}></div>
     </Grid>
   )
