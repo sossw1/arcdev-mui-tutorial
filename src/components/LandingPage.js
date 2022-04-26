@@ -339,7 +339,11 @@ export default function LandingPage() {
             <CardContent sx={{ textAlign: 'center' }}>
               <Grid container direction='column'>
                 <Grid item>
-                  <Typography variant='h3'>
+                  <Typography variant='h3' gutterBottom sx={{
+                    fontFamily: 'Pacifico',
+                    fontSize: '2.5rem',
+                    color: 'common.blue'
+                  }}>
                     The Revolution
                   </Typography>
                 </Grid>
