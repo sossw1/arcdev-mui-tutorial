@@ -1,5 +1,5 @@
 import Lottie from 'react-lottie';
-import { Button, Grid, Typography, useMediaQuery } from '@mui/material';
+import { Button, Card, CardContent, Grid, Typography, useMediaQuery } from '@mui/material';
 
 import animationData from '../animations/landinganimation/data';
 import ButtonArrow from './ui/ButtonArrow';
@@ -326,6 +326,37 @@ export default function LandingPage() {
             <img alt='website icon' src={websitesIcon} />
           </Grid>
         </Grid>
+      </Grid>
+      <Grid item>
+        <Card>
+          <CardContent sx={{ textAlign: 'center' }}>
+            <Grid container direction='column'>
+              <Grid item>
+                <Typography variant='h3'>
+                  The Revolution
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography variant='subtitle1'>
+                  Visionary insights coupled with cutting-edge technology is a recipe for revolution.
+                </Typography>
+                <Button
+                  variant='outlined'
+                  sx={{
+                    ...theme.learnButton,
+                    height: '45px',
+                    width: '145px'
+                  }}
+                >
+                  <span style={{ marginRight: '5px', marginLeft: '5px' }}>
+                    Learn More
+                  </span>
+                  <ButtonArrow width={15} height={15} fill={theme.palette.common.blue}></ButtonArrow>
+                </Button>
+              </Grid>
+            </Grid>
+          </CardContent>
+        </Card>
       </Grid>
     </Grid >
   )
