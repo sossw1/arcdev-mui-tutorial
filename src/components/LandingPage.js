@@ -3,12 +3,13 @@ import { Button, Card, CardContent, Grid, Typography, useMediaQuery } from '@mui
 
 import animationData from '../animations/landinganimation/data';
 import ButtonArrow from './ui/ButtonArrow';
+import CallToAction from './ui/CallToAction';
 import customSoftwareIcon from '../assets/Custom Software Icon.svg'
-import mobileAppsIcon from '../assets/mobileIcon.svg';
 import infoBackground from '../assets/infoBackground.svg';
+import mobileAppsIcon from '../assets/mobileIcon.svg';
 import revolutionBackground from '../assets/repeatingBackground.svg';
-import websitesIcon from '../assets/websiteIcon.svg';
 import theme from './ui/Theme';
+import websitesIcon from '../assets/websiteIcon.svg';
 
 export default function LandingPage() {
   const defaultOptions = {
@@ -479,6 +480,10 @@ export default function LandingPage() {
           height: '100%',
           width: '100%'
         }}></div>
+      </Grid>
+      {/*-----Call to Action Block-----*/}
+      <Grid item>
+        <CallToAction />
       </Grid>
     </Grid >
   )
