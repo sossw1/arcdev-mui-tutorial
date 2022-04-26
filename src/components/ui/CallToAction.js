@@ -1,11 +1,14 @@
 import { Button, Grid, Typography } from '@mui/material';
 import ButtonArrow from './ButtonArrow';
+
+import background from '../../assets/background.jpg';
+import mobileBackground from '../../assets/mobileBackground.jpg';
 import theme from './Theme';
 
 export default function CallToAction() {
   return (
-    <Grid container>
-      <Grid item>
+    <Grid container style={{ height: '60em' }}>
+      <Grid item style={{ position: 'absolute' }}>
         <Grid container direction='column'>
           <Grid item>
             <Typography
@@ -52,6 +55,17 @@ export default function CallToAction() {
           </Grid>
         </Grid>
       </Grid>
+      <div style={{
+        backgroundImage: `url(${background})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        height: '100%',
+        width: '100%',
+        [theme.breakpoints.down('lg')]: {
+          backgroundImage: `url(${mobileBackground})`
+        }
+      }}></div>
     </Grid>
   )
 }
