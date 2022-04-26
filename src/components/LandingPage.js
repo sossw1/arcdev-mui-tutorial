@@ -5,6 +5,7 @@ import animationData from '../animations/landinganimation/data';
 import ButtonArrow from './ui/ButtonArrow';
 import customSoftwareIcon from '../assets/Custom Software Icon.svg'
 import mobileAppsIcon from '../assets/mobileIcon.svg';
+import revolutionBackground from '../assets/repeatingBackground.svg';
 import websitesIcon from '../assets/websiteIcon.svg';
 import theme from './ui/Theme';
 
@@ -328,35 +329,52 @@ export default function LandingPage() {
         </Grid>
       </Grid>
       <Grid item>
-        <Card>
-          <CardContent sx={{ textAlign: 'center' }}>
-            <Grid container direction='column'>
-              <Grid item>
-                <Typography variant='h3'>
-                  The Revolution
-                </Typography>
+        <Grid container style={{ height: '100em' }} alignItems='center' justifyContent='center'>
+          <Card sx={{
+            position: 'absolute',
+            boxShadow: theme.shadows[10],
+            borderRadius: 15,
+            padding: '10em'
+          }}>
+            <CardContent sx={{ textAlign: 'center' }}>
+              <Grid container direction='column'>
+                <Grid item>
+                  <Typography variant='h3'>
+                    The Revolution
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant='subtitle1'>
+                    Visionary insights coupled with cutting-edge technology is a recipe for revolution.
+                  </Typography>
+                  <Button
+                    variant='outlined'
+                    sx={{
+                      ...theme.learnButton,
+                      height: '45px',
+                      width: '145px'
+                    }}
+                  >
+                    <span style={{ marginRight: '5px', marginLeft: '5px' }}>
+                      Learn More
+                    </span>
+                    <ButtonArrow width={15} height={15} fill={theme.palette.common.blue}></ButtonArrow>
+                  </Button>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Typography variant='subtitle1'>
-                  Visionary insights coupled with cutting-edge technology is a recipe for revolution.
-                </Typography>
-                <Button
-                  variant='outlined'
-                  sx={{
-                    ...theme.learnButton,
-                    height: '45px',
-                    width: '145px'
-                  }}
-                >
-                  <span style={{ marginRight: '5px', marginLeft: '5px' }}>
-                    Learn More
-                  </span>
-                  <ButtonArrow width={15} height={15} fill={theme.palette.common.blue}></ButtonArrow>
-                </Button>
-              </Grid>
-            </Grid>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+          <div
+            style={{
+              backgroundImage: `url(${revolutionBackground})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              height: '100%',
+              width: '100%'
+            }}
+          ></div>
+        </Grid>
       </Grid>
     </Grid >
   )
