@@ -315,13 +315,7 @@ export default function LandingPage() {
               [theme.breakpoints.down('sm')]: {
                 ml: 0
               },
-              mb: '5em',
-              [theme.breakpoints.down('lg')]: {
-                mb: '3em'
-              },
-              [theme.breakpoints.down('sm')]: {
-                mb: '2em'
-              }
+              mb: '5em'
             }}
           >
             <img alt='website icon' src={websitesIcon} />
@@ -329,12 +323,17 @@ export default function LandingPage() {
         </Grid>
       </Grid>
       <Grid item>
-        <Grid container style={{ height: '100em' }} alignItems='center' justifyContent='center'>
+        <Grid container style={{ height: '50em' }} alignItems='center' justifyContent='center'>
           <Card sx={{
             position: 'absolute',
             boxShadow: theme.shadows[10],
             borderRadius: 15,
-            padding: '10em'
+            padding: '5em',
+            [theme.breakpoints.down('md')]: {
+              padding: '5em 0',
+              borderRadius: 0,
+              width: '100%'
+            }
           }}>
             <CardContent sx={{ textAlign: 'center' }}>
               <Grid container direction='column'>
