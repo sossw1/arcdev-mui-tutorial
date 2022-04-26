@@ -5,6 +5,7 @@ import animationData from '../animations/landinganimation/data';
 import ButtonArrow from './ui/ButtonArrow';
 import customSoftwareIcon from '../assets/Custom Software Icon.svg'
 import mobileAppsIcon from '../assets/mobileIcon.svg';
+import infoBackground from '../assets/infoBackground.svg';
 import revolutionBackground from '../assets/repeatingBackground.svg';
 import websitesIcon from '../assets/websiteIcon.svg';
 import theme from './ui/Theme';
@@ -381,8 +382,15 @@ export default function LandingPage() {
         </Grid>
       </Grid>
       {/*-----Information Block-----*/}
-      <Grid container direction='row'>
-        <Grid item>
+      <Grid container style={{ height: '80em' }} direction='row' alignItems='center'>
+        <Grid
+          item
+          style={{
+            position: 'absolute',
+            marginLeft: '5em',
+
+          }}
+        >
           <Grid container direction='column'>
             <Typography variant='h2' sx={{
               fontFamily: 'Raleway',
@@ -398,6 +406,14 @@ export default function LandingPage() {
             }}>Let's get personal.</Typography>
           </Grid>
         </Grid>
+        <div style={{
+          backgroundImage: `url(${infoBackground})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          height: '100%',
+          width: '100%'
+        }}></div>
       </Grid>
     </Grid >
   )
