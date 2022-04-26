@@ -322,6 +322,7 @@ export default function LandingPage() {
           </Grid>
         </Grid>
       </Grid>
+      {/*-----The Revolution Block-----*/}
       <Grid item>
         <Grid container style={{ height: '50em' }} alignItems='center' justifyContent='center'>
           <Card sx={{
@@ -377,6 +378,25 @@ export default function LandingPage() {
               width: '100%'
             }}
           ></div>
+        </Grid>
+      </Grid>
+      {/*-----Information Block-----*/}
+      <Grid container direction='row'>
+        <Grid item>
+          <Grid container direction='column'>
+            <Typography variant='h2' sx={{
+              fontFamily: 'Raleway',
+              fontWeight: 700,
+              fontSize: '2.5rem',
+              color: 'common.white',
+              lineHeight: 1.5
+            }}>About Us</Typography>
+            <Typography variant='subtitle2' sx={{
+              color: 'common.white',
+              fontSize: '1.25rem',
+              fontWeight: 300
+            }}>Let's get personal.</Typography>
+          </Grid>
         </Grid>
       </Grid>
     </Grid >
