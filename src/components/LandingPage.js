@@ -21,6 +21,7 @@ export default function LandingPage() {
   }
 
   const isSmallAndDown = useMediaQuery(theme.breakpoints.down('md'));
+  const isXS = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Grid
@@ -382,9 +383,17 @@ export default function LandingPage() {
         </Grid>
       </Grid>
       {/*-----Information Block-----*/}
-      <Grid container style={{ height: '80em' }} direction='row' alignItems='center'>
-        <Grid container position='absolute'>
-          <Grid item sm style={{ marginLeft: '5em' }}>
+      <Grid container style={{ height: '50em' }} alignItems='center' direction='row'>
+        <Grid
+          container
+          position='absolute'
+          textAlign={isXS ? 'center' : 'inherit'}
+          direction={isXS ? 'column' : 'row'}
+          spacing={isXS ? 10 : 0}
+        >
+          <Grid item sm style={{
+            marginLeft: isXS ? 0 : isSmallAndDown ? '2em' : '10em'
+          }}>
             <Grid container direction='column'>
               <Typography variant='h2' sx={{
                 fontFamily: 'Raleway',
@@ -421,7 +430,10 @@ export default function LandingPage() {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item sm style={{ marginRight: '5em', textAlign: 'right' }}>
+          <Grid item sm style={{
+            marginRight: isXS ? 0 : isSmallAndDown ? '2em' : '10em',
+            textAlign: isXS ? 'center' : 'right'
+          }}>
             <Grid container direction='column'>
               <Typography variant='h2' sx={{
                 fontFamily: 'Raleway',
