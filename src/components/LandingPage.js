@@ -383,47 +383,79 @@ export default function LandingPage() {
       </Grid>
       {/*-----Information Block-----*/}
       <Grid container style={{ height: '80em' }} direction='row' alignItems='center'>
-        <Grid
-          item
-          style={{
-            position: 'absolute',
-            marginLeft: '5em',
-
-          }}
-        >
-          <Grid container direction='column'>
-            <Typography variant='h2' sx={{
-              fontFamily: 'Raleway',
-              fontWeight: 700,
-              fontSize: '2.5rem',
-              color: 'common.white',
-              lineHeight: 1.5
-            }}>About Us</Typography>
-            <Typography variant='subtitle2' sx={{
-              color: 'common.white',
-              fontSize: '1.25rem',
-              fontWeight: 300
-            }}>Let's get personal.</Typography>
-            <Grid item>
-              <Button
-                variant='outlined'
-                sx={{
-                  ...theme.learnButton,
-                  fontSize: '0.7rem',
-                  height: '35px',
-                  padding: '5px',
-                  [theme.breakpoints.down('md')]: {
-                    mb: '2em'
-                  },
-                  color: 'common.white',
-                  borderColor: 'common.white'
-                }}
-              >
-                <span style={{ marginRight: '5px', marginLeft: '5px' }}>
-                  Learn More
-                </span>
-                <ButtonArrow width={15} height={15} fill={theme.palette.common.white}></ButtonArrow>
-              </Button>
+        <Grid container position='absolute'>
+          <Grid item sm style={{ marginLeft: '5em' }}>
+            <Grid container direction='column'>
+              <Typography variant='h2' sx={{
+                fontFamily: 'Raleway',
+                fontWeight: 700,
+                fontSize: '2.5rem',
+                color: 'common.white',
+                lineHeight: 1.5
+              }}>About Us</Typography>
+              <Typography variant='subtitle2' sx={{
+                color: 'common.white',
+                fontSize: '1.25rem',
+                fontWeight: 300
+              }}>Let's get personal.</Typography>
+              <Grid item>
+                <Button
+                  variant='outlined'
+                  sx={{
+                    ...theme.learnButton,
+                    fontSize: '0.7rem',
+                    height: '35px',
+                    padding: '5px',
+                    [theme.breakpoints.down('md')]: {
+                      mb: '2em'
+                    },
+                    color: 'common.white',
+                    borderColor: 'common.white'
+                  }}
+                >
+                  <span style={{ marginRight: '5px', marginLeft: '5px' }}>
+                    Learn More
+                  </span>
+                  <ButtonArrow width={15} height={15} fill={theme.palette.common.white}></ButtonArrow>
+                </Button>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item sm style={{ marginRight: '5em', textAlign: 'right' }}>
+            <Grid container direction='column'>
+              <Typography variant='h2' sx={{
+                fontFamily: 'Raleway',
+                fontWeight: 700,
+                fontSize: '2.5rem',
+                color: 'common.white',
+                lineHeight: 1.5
+              }}>Contact Us</Typography>
+              <Typography variant='subtitle2' sx={{
+                color: 'common.white',
+                fontSize: '1.25rem',
+                fontWeight: 300
+              }}>Say hello!</Typography>
+              <Grid item>
+                <Button
+                  variant='outlined'
+                  sx={{
+                    ...theme.learnButton,
+                    fontSize: '0.7rem',
+                    height: '35px',
+                    padding: '5px',
+                    [theme.breakpoints.down('md')]: {
+                      mb: '2em'
+                    },
+                    color: 'common.white',
+                    borderColor: 'common.white'
+                  }}
+                >
+                  <span style={{ marginRight: '5px', marginLeft: '5px' }}>
+                    Learn More
+                  </span>
+                  <ButtonArrow width={15} height={15} fill={theme.palette.common.white}></ButtonArrow>
+                </Button>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
