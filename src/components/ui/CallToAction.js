@@ -1,4 +1,5 @@
 import { Button, Grid, useMediaQuery, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import ButtonArrow from './ButtonArrow';
 
 import background from '../../assets/background.jpg';
@@ -54,6 +55,8 @@ export default function CallToAction() {
             <Grid item container justifyContent={isSmAndDown ? 'center' : undefined}>
               <Button
                 variant='outlined'
+                component={Link}
+                to='/revolution'
                 sx={{
                   ...theme.learnButton,
                   fontSize: '0.7rem',
@@ -76,6 +79,8 @@ export default function CallToAction() {
       <Grid item>
         <Button
           variant='contained'
+          component={Link}
+          to='/estimate'
           sx={{
             ...theme.typography.estimate,
             borderRadius: 50,

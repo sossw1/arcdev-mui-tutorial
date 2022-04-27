@@ -1,5 +1,6 @@
 import Lottie from 'react-lottie';
 import { Button, Card, CardContent, Grid, Typography, useMediaQuery } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 import animationData from '../animations/landinganimation/data';
 import ButtonArrow from './ui/ButtonArrow';
@@ -70,6 +71,8 @@ export default function LandingPage() {
               <Grid item>
                 <Button
                   variant='contained'
+                  component={Link}
+                  to='/estimate'
                   sx={{
                     ...theme.typography.estimate,
                     backgroundColor: theme.palette.secondary.main,
@@ -88,6 +91,8 @@ export default function LandingPage() {
               <Grid item>
                 <Button
                   variant='outlined'
+                  component={Link}
+                  to='/revolution'
                   sx={{
                     ...theme.learnButton,
                     height: '45px',
@@ -161,6 +166,8 @@ export default function LandingPage() {
             </Typography>
             <Button
               variant='outlined'
+              component={Link}
+              to='/custom-software'
               sx={{
                 ...theme.learnButton,
                 fontSize: '0.7rem',
@@ -228,6 +235,8 @@ export default function LandingPage() {
             </Typography>
             <Button
               variant='outlined'
+              component={Link}
+              to='/mobile-apps'
               sx={{
                 ...theme.learnButton,
                 fontSize: '0.7rem',
@@ -295,6 +304,8 @@ export default function LandingPage() {
             </Typography>
             <Button
               variant='outlined'
+              component={Link}
+              to='/websites'
               sx={{
                 ...theme.learnButton,
                 fontSize: '0.7rem',
@@ -356,6 +367,8 @@ export default function LandingPage() {
                   </Typography>
                   <Button
                     variant='outlined'
+                    component={Link}
+                    to='/revolution'
                     sx={{
                       ...theme.learnButton,
                       height: '45px',
@@ -411,6 +424,8 @@ export default function LandingPage() {
               <Grid item>
                 <Button
                   variant='outlined'
+                  component={Link}
+                  to='/about'
                   sx={{
                     ...theme.learnButton,
                     fontSize: '0.7rem',
@@ -451,6 +466,8 @@ export default function LandingPage() {
               <Grid item>
                 <Button
                   variant='outlined'
+                  component={Link}
+                  to='/contact'
                   sx={{
                     ...theme.learnButton,
                     fontSize: '0.7rem',
