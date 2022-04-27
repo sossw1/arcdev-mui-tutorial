@@ -89,7 +89,10 @@ export default function CallToAction() {
             backgroundColor: 'common.orange',
             fontSize: '1.5rem',
             mr: isSmAndDown ? 0 : '5em',
-            ml: isSmAndDown ? 0 : '2em'
+            ml: isSmAndDown ? 0 : '2em',
+            '&:hover': {
+              backgroundColor: theme.palette.secondary.light
+            }
           }}
         >
           Free Estimate

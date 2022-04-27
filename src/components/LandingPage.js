@@ -435,7 +435,10 @@ export default function LandingPage() {
                       mb: '2em'
                     },
                     color: 'common.white',
-                    borderColor: 'common.white'
+                    borderColor: 'common.white',
+                    '&:hover': {
+                      borderColor: 'common.white'
+                    }
                   }}
                 >
                   <span style={{ marginRight: '5px', marginLeft: '5px' }}>
@@ -477,7 +480,10 @@ export default function LandingPage() {
                       mb: '2em'
                     },
                     color: 'common.white',
-                    borderColor: 'common.white'
+                    borderColor: 'common.white',
+                    '&:hover': {
+                      borderColor: 'common.white'
+                    }
                   }}
                 >
                   <span style={{ marginRight: '5px', marginLeft: '5px' }}>
