@@ -96,6 +96,11 @@ export default function Header(props) {
           setValue(4);
         }
         break;
+      case '/estimate':
+        if (value !== 5) {
+          setValue(5);
+        }
+        break;
       default:
         break;
     }
@@ -216,6 +221,7 @@ export default function Header(props) {
         color='secondary'
         component={Link}
         to='/estimate'
+        onClick={() => props.setValue(5)}
       >
         Free Estimate
       </Button>
