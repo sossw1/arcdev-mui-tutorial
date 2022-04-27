@@ -21,6 +21,7 @@ export default function CallToAction() {
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
+        backgroundAttachment: isMedAndDown ? undefined : 'fixed',
         height: '60em',
         width: '100%'
       }}
