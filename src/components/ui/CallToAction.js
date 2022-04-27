@@ -8,12 +8,14 @@ import theme from './Theme';
 
 export default function CallToAction() {
   const isMedAndDown = useMediaQuery(theme.breakpoints.down('lg'));
+  const isSmAndDown = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Grid
       container
       alignItems='center'
-      justifyContent='space-between'
+      justifyContent={isSmAndDown ? 'center' : 'space-between'}
+      direction={isSmAndDown ? 'column' : 'row'}
       sx={{
         backgroundImage: `url(${isMedAndDown ? mobileBackground : background})`,
         backgroundPosition: 'center',
@@ -23,7 +25,7 @@ export default function CallToAction() {
         width: '100%'
       }}
     >
-      <Grid item style={{ marginLeft: '5em' }}>
+      <Grid item textAlign={isSmAndDown ? 'center' : 'inherit'} sx={{ ml: isSmAndDown ? 0 : '5em' }}>
         <Grid container direction='column'>
           <Grid item>
             <Typography
@@ -48,7 +50,7 @@ export default function CallToAction() {
             >
               Take advantage of the 21st century.
             </Typography>
-            <Grid item container>
+            <Grid item container justifyContent={isSmAndDown ? 'center' : undefined}>
               <Button
                 variant='outlined'
                 sx={{
@@ -80,7 +82,8 @@ export default function CallToAction() {
             width: 205,
             backgroundColor: 'common.orange',
             fontSize: '1.5rem',
-            mr: '5em'
+            mr: isSmAndDown ? 0 : '5em',
+            ml: isSmAndDown ? 0 : '2em'
           }}
         >
           Free Estimate
