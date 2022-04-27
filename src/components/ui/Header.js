@@ -214,6 +214,8 @@ export default function Header(props) {
         }}
         variant='contained'
         color='secondary'
+        component={Link}
+        to='/estimate'
       >
         Free Estimate
       </Button>
