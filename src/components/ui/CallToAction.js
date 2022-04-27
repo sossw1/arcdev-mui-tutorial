@@ -10,8 +10,20 @@ export default function CallToAction() {
   const isMedAndDown = useMediaQuery(theme.breakpoints.down('lg'));
 
   return (
-    <Grid container style={{ height: '60em' }}>
-      <Grid item style={{ position: 'absolute' }}>
+    <Grid
+      container
+      alignItems='center'
+      justifyContent='space-between'
+      sx={{
+        backgroundImage: `url(${isMedAndDown ? mobileBackground : background})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        height: '60em',
+        width: '100%'
+      }}
+    >
+      <Grid item style={{ marginLeft: '5em' }}>
         <Grid container direction='column'>
           <Grid item>
             <Typography
@@ -30,7 +42,7 @@ export default function CallToAction() {
               variant='subtitle2'
               sx={{
                 color: 'common.white',
-                fontSize: '1.25rem',
+                fontSize: '1.5rem',
                 fontWeight: 300
               }}
             >
@@ -58,14 +70,22 @@ export default function CallToAction() {
           </Grid>
         </Grid>
       </Grid>
-      <div style={{
-        backgroundImage: `url(${isMedAndDown ? mobileBackground : background})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        height: '100%',
-        width: '100%',
-      }}></div>
+      <Grid item>
+        <Button
+          variant='contained'
+          sx={{
+            ...theme.typography.estimate,
+            borderRadius: 50,
+            height: 80,
+            width: 205,
+            backgroundColor: 'common.orange',
+            fontSize: '1.5rem',
+            mr: '5em'
+          }}
+        >
+          Free Estimate
+        </Button>
+      </Grid>
     </Grid>
   )
 }
