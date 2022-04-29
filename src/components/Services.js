@@ -15,6 +15,27 @@ export default function Services() {
       <Grid
         item
         sx={{
+          ml: isSmallAndDown ? 0 : '5em',
+          mt: '2em'
+        }}
+      >
+        <Typography
+          variant='h2'
+          align={isSmallAndDown ? 'center' : undefined}
+          sx={{
+            fontFamily: 'Raleway',
+            fontWeight: 700,
+            fontSize: '2.5rem',
+            color: 'common.blue',
+            lineHeight: 1.5
+          }}
+        >
+          Services
+        </Typography>
+      </Grid>
+      <Grid
+        item
+        sx={{
           mt: '12em'
         }}
       >
