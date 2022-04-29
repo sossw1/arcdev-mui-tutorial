@@ -36,7 +36,7 @@ export default function Services() {
       <Grid
         item
         sx={{
-          mt: '12em'
+          mt: isSmallAndDown ? '5em' : '12em'
         }}
       >
         <Grid container direction='row' justifyContent={isSmallAndDown ? 'center' : undefined}>
@@ -105,7 +105,7 @@ export default function Services() {
       <Grid
         item
         sx={{
-          mt: '12em'
+          mt: isSmallAndDown ? '5em' : '12em'
         }}
       >
         <Grid container direction='row' justifyContent={isSmallAndDown ? 'center' : 'flex-end'}>
@@ -175,7 +175,7 @@ export default function Services() {
       <Grid
         item
         sx={{
-          mt: '12em'
+          mt: isSmallAndDown ? '5em' : '12em'
         }}
       >
         <Grid container direction='row' justifyContent={isSmallAndDown ? 'center' : undefined}>
