@@ -12,7 +12,9 @@ export default function CustomSoftware() {
             <img src={backArrow} alt='Back to Services Page' />
           </IconButton>
         </Grid>
-        <Grid item container direction='column'>
+        <Grid item container direction='column' sx={{
+          maxWidth: '40em'
+        }}>
           <Grid item>
             <Typography variant='h2' sx={{
               fontFamily: 'Raleway',
