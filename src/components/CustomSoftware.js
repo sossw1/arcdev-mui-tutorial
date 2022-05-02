@@ -7,8 +7,8 @@ export default function CustomSoftware() {
   return (
     <Grid container direction='column'>
       <Grid item container direction='row'>
-        <Grid item>
-          <IconButton>
+        <Grid item sx={{ mt: '0.75em' }}>
+          <IconButton sx={{ '&:hover': { backgroundColor: 'transparent' } }}>
             <img src={backArrow} alt='Back to Services Page' />
           </IconButton>
         </Grid>
@@ -39,8 +39,8 @@ export default function CustomSoftware() {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item>
-          <IconButton>
+        <Grid item sx={{ mt: '0.75em' }}>
+          <IconButton sx={{ '&:hover': { backgroundColor: 'transparent' } }}>
             <img src={forwardArrow} alt='Forward to iOS/Android App Development Page' />
           </IconButton>
         </Grid>
