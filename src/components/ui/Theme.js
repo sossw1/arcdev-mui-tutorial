@@ -30,6 +30,11 @@ export default createTheme({
       fontSize: '1rem',
       textTransform: 'none',
       color: 'common.white',
+    },
+    body1: {
+      fontSize: '1.25rem',
+      color: arcGrey,
+      fontWeight: 300
     }
   },
   zIndex: {
