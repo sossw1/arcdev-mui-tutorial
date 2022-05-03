@@ -2,7 +2,10 @@ import { Grid, IconButton, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import backArrow from '../assets/backArrow.svg';
+import cash from '../assets/cash.svg';
 import forwardArrow from '../assets/forwardArrow.svg';
+import lightbulb from '../assets/bulb.svg';
+import stopwatch from '../assets/stopwatch.svg';
 
 export default function CustomSoftware(props) {
   const { setSelectedMenuIndex } = props;
@@ -51,6 +54,38 @@ export default function CustomSoftware(props) {
           >
             <img src={forwardArrow} alt='Forward to iOS/Android App Development Page' />
           </IconButton>
+        </Grid>
+      </Grid>
+      <Grid item container direction='row' justifyContent='center' sx={{ mt: '15em', mb: '20em' }}>
+        <Grid item container direction='column' md alignItems='center' style={{ maxWidth: '40em' }}>
+          <Grid item>
+            <Typography variant='h4'>
+              Save Energy
+            </Typography>
+          </Grid>
+          <Grid item>
+            <img src={lightbulb} alt='lightbulb' />
+          </Grid>
+        </Grid>
+        <Grid item container direction='column' md alignItems='center' style={{ maxWidth: '40em' }}>
+          <Grid item>
+            <Typography variant='h4'>
+              Save Time
+            </Typography>
+          </Grid>
+          <Grid item>
+            <img src={stopwatch} alt='stopwatch' />
+          </Grid>
+        </Grid>
+        <Grid item container direction='column' md alignItems='center' style={{ maxWidth: '40em' }}>
+          <Grid item>
+            <Typography variant='h4'>
+              Save Money
+            </Typography>
+          </Grid>
+          <Grid item>
+            <img src={cash} alt='cash' />
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
