@@ -53,17 +53,7 @@ export default function LandingPage() {
               }
             }}
           >
-            <Typography
-              variant='h2'
-              align='center'
-              sx={{
-                fontFamily: 'Raleway',
-                fontWeight: 700,
-                fontSize: '2.5rem',
-                color: 'common.blue',
-                lineHeight: 1.5
-              }}
-            >
+            <Typography variant='h2' align='center'>
               Bringing West Coast Technology<br />
               to the Midwest
             </Typography>
@@ -146,21 +136,13 @@ export default function LandingPage() {
               }
             }}
           >
-            <Typography
-              variant='h4'
-              sx={{
-                fontFamily: 'Raleway',
-                fontSize: '1.75rem',
-                color: theme.palette.common.blue,
-                fontWeight: 700
-              }}
-            >
+            <Typography variant='h4'>
               Custom Software Development
             </Typography>
-            <Typography variant='subtitle1' sx={{ ...theme.subtitle, mb: '1em' }}>
+            <Typography variant='subtitle1' sx={{ mb: '1em' }}>
               Save Energy. Save Time. Save Money.
             </Typography>
-            <Typography variant='subtitle1' sx={{ ...theme.subtitle }}>
+            <Typography variant='subtitle1'>
               Complete digital solutions, from investigation to{' '}
               <span style={{ fontFamily: 'Pacifico', color: theme.palette.common.orange }}>celebration.</span>
             </Typography>
@@ -216,21 +198,13 @@ export default function LandingPage() {
               }
             }}
           >
-            <Typography
-              variant='h4'
-              sx={{
-                fontFamily: 'Raleway',
-                fontSize: '1.75rem',
-                color: theme.palette.common.blue,
-                fontWeight: 700
-              }}
-            >
+            <Typography variant='h4'>
               iOS/Android App Development
             </Typography>
-            <Typography variant='subtitle1' sx={{ ...theme.subtitle, mb: '1em' }}>
+            <Typography variant='subtitle1' sx={{ mb: '1em' }}>
               Extend Functionality. Extend Access. Increase Engagement.
             </Typography>
-            <Typography variant='subtitle1' sx={{ ...theme.subtitle }}>
+            <Typography variant='subtitle1'>
               Integrate your web experience or create a standalone app {isSmallAndDown ? null : <br />}with either mobile platform.
             </Typography>
             <Button
@@ -285,21 +259,13 @@ export default function LandingPage() {
               }
             }}
           >
-            <Typography
-              variant='h4'
-              sx={{
-                fontFamily: 'Raleway',
-                fontSize: '1.75rem',
-                color: theme.palette.common.blue,
-                fontWeight: 700
-              }}
-            >
+            <Typography variant='h4'>
               Website Development
             </Typography>
-            <Typography variant='subtitle1' sx={{ ...theme.subtitle, mb: '1em' }}>
+            <Typography variant='subtitle1' sx={{ mb: '1em' }}>
               Reach More. Discover More. Sell More.
             </Typography>
-            <Typography variant='subtitle1' sx={{ ...theme.subtitle }}>
+            <Typography variant='subtitle1'>
               Optimized for Search Engines, built for speed.
             </Typography>
             <Button
@@ -353,11 +319,7 @@ export default function LandingPage() {
             <CardContent sx={{ textAlign: 'center' }}>
               <Grid container direction='column'>
                 <Grid item>
-                  <Typography variant='h3' gutterBottom sx={{
-                    fontFamily: 'Pacifico',
-                    fontSize: '2.5rem',
-                    color: 'common.blue'
-                  }}>
+                  <Typography variant='h3' gutterBottom>
                     The Revolution
                   </Typography>
                 </Grid>
@@ -409,18 +371,8 @@ export default function LandingPage() {
             marginLeft: isXS ? 0 : isSmallAndDown ? '2em' : '10em'
           }}>
             <Grid container direction='column'>
-              <Typography variant='h2' sx={{
-                fontFamily: 'Raleway',
-                fontWeight: 700,
-                fontSize: '2.5rem',
-                color: 'common.white',
-                lineHeight: 1.5
-              }}>About Us</Typography>
-              <Typography variant='subtitle2' sx={{
-                color: 'common.white',
-                fontSize: '1.25rem',
-                fontWeight: 300
-              }}>Let's get personal.</Typography>
+              <Typography variant='h2' sx={{ color: 'common.white' }}>About Us</Typography>
+              <Typography variant='subtitle2' sx={{ fontSize: '1.25rem' }}>Let's get personal.</Typography>
               <Grid item>
                 <Button
                   variant='outlined'
@@ -454,18 +406,10 @@ export default function LandingPage() {
             textAlign: isXS ? 'center' : 'right'
           }}>
             <Grid container direction='column'>
-              <Typography variant='h2' sx={{
-                fontFamily: 'Raleway',
-                fontWeight: 700,
-                fontSize: '2.5rem',
-                color: 'common.white',
-                lineHeight: 1.5
-              }}>Contact Us</Typography>
-              <Typography variant='subtitle2' sx={{
-                color: 'common.white',
-                fontSize: '1.25rem',
-                fontWeight: 300
-              }}>Say hello!</Typography>
+              <Typography variant='h2' sx={{ color: 'common.white' }}>
+                Contact Us
+              </Typography>
+              <Typography variant='subtitle2' sx={{ fontSize: '1.25rem' }}>Say hello!</Typography>
               <Grid item>
                 <Button
                   variant='outlined'

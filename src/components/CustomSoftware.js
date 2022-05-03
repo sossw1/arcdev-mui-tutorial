@@ -16,13 +16,7 @@ export default function CustomSoftware() {
           maxWidth: '40em'
         }}>
           <Grid item>
-            <Typography variant='h2' sx={{
-              fontFamily: 'Raleway',
-              fontWeight: 700,
-              fontSize: '2.5rem',
-              color: 'common.blue',
-              lineHeight: 1.5
-            }}>Custom Software Development</Typography>
+            <Typography variant='h2'>Custom Software Development</Typography>
           </Grid>
           <Grid item>
             <Typography variant='body1' paragraph>

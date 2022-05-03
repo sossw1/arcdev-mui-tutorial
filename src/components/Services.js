@@ -22,13 +22,6 @@ export default function Services() {
         <Typography
           variant='h2'
           align={isSmallAndDown ? 'center' : undefined}
-          sx={{
-            fontFamily: 'Raleway',
-            fontWeight: 700,
-            fontSize: '2.5rem',
-            color: 'common.blue',
-            lineHeight: 1.5
-          }}
         >
           Services
         </Typography>
@@ -50,21 +43,13 @@ export default function Services() {
               }
             }}
           >
-            <Typography
-              variant='h4'
-              sx={{
-                fontFamily: 'Raleway',
-                fontSize: '1.75rem',
-                color: theme.palette.common.blue,
-                fontWeight: 700
-              }}
-            >
+            <Typography variant='h4'>
               Custom Software Development
             </Typography>
-            <Typography variant='subtitle1' sx={{ ...theme.subtitle, mb: '1em' }}>
+            <Typography variant='subtitle1' sx={{ mb: '1em' }}>
               Save Energy. Save Time. Save Money.
             </Typography>
-            <Typography variant='subtitle1' sx={{ ...theme.subtitle }}>
+            <Typography variant='subtitle1'>
               Complete digital solutions, from investigation to{' '}
               <span style={{ fontFamily: 'Pacifico', color: theme.palette.common.orange }}>celebration.</span>
             </Typography>
@@ -120,21 +105,13 @@ export default function Services() {
               }
             }}
           >
-            <Typography
-              variant='h4'
-              sx={{
-                fontFamily: 'Raleway',
-                fontSize: '1.75rem',
-                color: theme.palette.common.blue,
-                fontWeight: 700
-              }}
-            >
+            <Typography variant='h4'>
               iOS/Android App Development
             </Typography>
-            <Typography variant='subtitle1' sx={{ ...theme.subtitle, mb: '1em' }}>
+            <Typography variant='subtitle1' sx={{ mb: '1em' }}>
               Extend Functionality. Extend Access. Increase Engagement.
             </Typography>
-            <Typography variant='subtitle1' sx={{ ...theme.subtitle }}>
+            <Typography variant='subtitle1'>
               Integrate your web experience or create a standalone app {isSmallAndDown ? null : <br />}with either mobile platform.
             </Typography>
             <Button
@@ -189,21 +166,13 @@ export default function Services() {
               }
             }}
           >
-            <Typography
-              variant='h4'
-              sx={{
-                fontFamily: 'Raleway',
-                fontSize: '1.75rem',
-                color: theme.palette.common.blue,
-                fontWeight: 700
-              }}
-            >
+            <Typography variant='h4'>
               Website Development
             </Typography>
-            <Typography variant='subtitle1' sx={{ ...theme.subtitle, mb: '1em' }}>
+            <Typography variant='subtitle1' sx={{ mb: '1em' }}>
               Reach More. Discover More. Sell More.
             </Typography>
-            <Typography variant='subtitle1' sx={{ ...theme.subtitle }}>
+            <Typography variant='subtitle1'>
               Optimized for Search Engines, built for speed.
             </Typography>
             <Button

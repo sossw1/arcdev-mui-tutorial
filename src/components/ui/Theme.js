@@ -31,6 +31,34 @@ export default createTheme({
       textTransform: 'none',
       color: 'common.white',
     },
+    h2: {
+      fontFamily: 'Raleway',
+      fontWeight: 700,
+      fontSize: '2.5rem',
+      color: arcBlue,
+      lineHeight: 1.5
+    },
+    h3: {
+      fontFamily: 'Pacifico',
+      fontSize: '2.5rem',
+      color: arcBlue
+    },
+    h4: {
+      fontFamily: 'Raleway',
+      fontSize: '1.75rem',
+      color: arcBlue,
+      fontWeight: 700
+    },
+    subtitle1: {
+      fontSize: '1.25rem',
+      fontWeight: 300,
+      color: arcGrey
+    },
+    subtitle2: {
+      color: 'white',
+      fontSize: '1.5rem',
+      fontWeight: 300
+    },
     body1: {
       fontSize: '1.25rem',
       color: arcGrey,
@@ -39,11 +67,6 @@ export default createTheme({
   },
   zIndex: {
     appBar: 1301
-  },
-  subtitle: {
-    fontSize: '1.25rem',
-    fontWeight: 300,
-    color: arcGrey
   },
   learnButton: {
     borderColor: 'common.blue',

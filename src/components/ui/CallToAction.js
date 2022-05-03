@@ -30,26 +30,10 @@ export default function CallToAction() {
       <Grid item textAlign={isSmAndDown ? 'center' : 'inherit'} sx={{ ml: isSmAndDown ? 0 : '5em' }}>
         <Grid container direction='column'>
           <Grid item>
-            <Typography
-              variant='h2'
-              sx={{
-                fontFamily: 'Raleway',
-                fontWeight: 700,
-                fontSize: '2.5rem',
-                color: 'common.blue',
-                lineHeight: 1.5
-              }}
-            >
+            <Typography variant='h2'>
               Simple Software.<br />Revolutionary Results.
             </Typography>
-            <Typography
-              variant='subtitle2'
-              sx={{
-                color: 'common.white',
-                fontSize: '1.5rem',
-                fontWeight: 300
-              }}
-            >
+            <Typography variant='subtitle2'>
               Take advantage of the 21st century.
             </Typography>
             <Grid item container justifyContent={isSmAndDown ? 'center' : undefined}>
