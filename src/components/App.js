@@ -25,7 +25,14 @@ function App() {
         <Routes>
           <Route exact path='/' element={<LandingPage />} />
           <Route exact path='/services' element={<Services />} />
-          <Route exact path='/custom-software' element={<CustomSoftware />} />
+          <Route exact path='/custom-software'
+            element={
+              <CustomSoftware
+                setValue={setValue}
+                setSelectedMenuIndex={setSelectedMenuIndex}
+              />
+            }
+          />
           <Route exact path='/mobile-apps' element={<div>Mobile Apps</div>} />
           <Route exact path='/websites' element={<div>Websites</div>} />
           <Route exact path='/revolution' element={<div>The Revolution</div>} />

@@ -1,16 +1,23 @@
 import { Grid, IconButton, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 import backArrow from '../assets/backArrow.svg';
 import forwardArrow from '../assets/forwardArrow.svg';
 
-export default function CustomSoftware() {
+export default function CustomSoftware(props) {
+  const { setSelectedMenuIndex } = props;
   return (
     <Grid container direction='column' sx={{
       padding: '2em 5em 10em 5em'
     }}>
       <Grid item container direction='row'>
         <Grid item sx={{ mt: '0.75em', mr: '1em', ml: '-3.5em' }}>
-          <IconButton sx={{ '&:hover': { backgroundColor: 'transparent' } }}>
+          <IconButton
+            sx={{ '&:hover': { backgroundColor: 'transparent' } }}
+            component={Link}
+            to='/services'
+            onClick={() => setSelectedMenuIndex(0)}
+          >
             <img src={backArrow} alt='Back to Services Page' />
           </IconButton>
         </Grid>
@@ -36,7 +43,12 @@ export default function CustomSoftware() {
           </Grid>
         </Grid>
         <Grid item sx={{ mt: '0.75em' }}>
-          <IconButton sx={{ '&:hover': { backgroundColor: 'transparent' } }}>
+          <IconButton
+            sx={{ '&:hover': { backgroundColor: 'transparent' } }}
+            component={Link}
+            to='/mobile-apps'
+            onClick={() => setSelectedMenuIndex(2)}
+          >
             <img src={forwardArrow} alt='Forward to iOS/Android App Development Page' />
           </IconButton>
         </Grid>
