@@ -5,9 +5,11 @@ import forwardArrow from '../assets/forwardArrow.svg';
 
 export default function CustomSoftware() {
   return (
-    <Grid container direction='column'>
+    <Grid container direction='column' sx={{
+      padding: '2em 5em 10em 5em'
+    }}>
       <Grid item container direction='row'>
-        <Grid item sx={{ mt: '0.75em' }}>
+        <Grid item sx={{ mt: '0.75em', mr: '1em', ml: '-3.5em' }}>
           <IconButton sx={{ '&:hover': { backgroundColor: 'transparent' } }}>
             <img src={backArrow} alt='Back to Services Page' />
           </IconButton>
