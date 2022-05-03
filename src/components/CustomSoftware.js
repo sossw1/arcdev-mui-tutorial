@@ -134,7 +134,7 @@ export default function CustomSoftware(props) {
           </Grid>
           <Grid item md>
             <Lottie options={documentsOptions} style={{
-              maxHeight: 325, maxWidth: 275, minHeight: 275
+              maxHeight: 275, maxWidth: 275, minHeight: 250
             }} />
           </Grid>
         </Grid>
