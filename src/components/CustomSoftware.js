@@ -1,14 +1,26 @@
 import { Grid, IconButton, Typography } from '@mui/material';
+import Lottie from 'react-lottie';
 import { Link } from 'react-router-dom';
 
 import backArrow from '../assets/backArrow.svg';
 import cash from '../assets/cash.svg';
+import documentsAnimation from '../animations/documentsAnimation/data';
 import forwardArrow from '../assets/forwardArrow.svg';
 import lightbulb from '../assets/bulb.svg';
 import stopwatch from '../assets/stopwatch.svg';
 
 export default function CustomSoftware(props) {
   const { setSelectedMenuIndex } = props;
+
+  const documentsOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: documentsAnimation,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  }
+
   return (
     <Grid container direction='column' sx={{
       padding: '2em 5em 10em 5em'
@@ -90,7 +102,7 @@ export default function CustomSoftware(props) {
       </Grid>
       <Grid item container direction='row'>
         <Grid item container sx={{ maxWidth: '40em' }}>
-          <Grid item container direction='column'>
+          <Grid item container direction='column' md>
             <Grid item>
               <Typography variant='h4'>Digital Documents & Data</Typography>
             </Grid>
@@ -109,6 +121,11 @@ export default function CustomSoftware(props) {
                 By utilizing digital forms and documents you can remove these obsolete expenses, accelerate your communication, and help the Earth.
               </Typography>
             </Grid>
+          </Grid>
+          <Grid item md>
+            <Lottie options={documentsOptions} style={{
+              maxHeight: 325, maxWidth: 275, minHeight: 275
+            }} />
           </Grid>
         </Grid>
       </Grid>
