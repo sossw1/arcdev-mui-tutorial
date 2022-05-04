@@ -137,7 +137,13 @@ export default function CustomSoftware(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item container direction='row' justifyContent='space-between'>
+      <Grid
+        item
+        container
+        direction={isMedAndDown ? 'column' : 'row'}
+        alignItems={isMedAndDown ? 'center' : undefined}
+        justifyContent='space-between'
+      >
         <Grid item container sx={{ maxWidth: '40em' }} md>
           <Grid item container direction='column' md>
             <Grid item>
@@ -199,7 +205,13 @@ export default function CustomSoftware(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item container direction='row' justifyContent='space-between'>
+      <Grid
+        item
+        container
+        direction={isMedAndDown ? 'column' : 'row'}
+        alignItems={isMedAndDown ? 'center' : undefined}
+        justifyContent='space-between'
+      >
         <Grid item container sx={{ maxWidth: '40em' }} md>
           <Grid item container direction='column' md>
             <Grid item>
