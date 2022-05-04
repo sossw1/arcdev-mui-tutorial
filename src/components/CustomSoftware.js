@@ -16,6 +16,7 @@ import uxAnimation from '../animations/uxAnimation/data';
 
 export default function CustomSoftware(props) {
   const { setSelectedMenuIndex } = props;
+  const isSmAndDown = useMediaQuery(theme.breakpoints.down('md'));
   const isMedAndDown = useMediaQuery(theme.breakpoints.down('lg'));
 
   const documentsOptions = {
@@ -116,7 +117,7 @@ export default function CustomSoftware(props) {
             <img src={lightbulb} alt='lightbulb' />
           </Grid>
         </Grid>
-        <Grid item container direction='column' md alignItems='center' style={{ maxWidth: '40em' }}>
+        <Grid item container direction='column' md alignItems='center' style={{ maxWidth: '40em', marginTop: isSmAndDown ? '10em' : 0 }}>
           <Grid item>
             <Typography variant='h4'>
               Save Time
@@ -126,7 +127,7 @@ export default function CustomSoftware(props) {
             <img src={stopwatch} alt='stopwatch' />
           </Grid>
         </Grid>
-        <Grid item container direction='column' md alignItems='center' style={{ maxWidth: '40em' }}>
+        <Grid item container direction='column' md alignItems='center' style={{ maxWidth: '40em', marginTop: isSmAndDown ? '10em' : 0 }}>
           <Grid item>
             <Typography variant='h4'>
               Save Money
@@ -144,7 +145,7 @@ export default function CustomSoftware(props) {
         alignItems={isMedAndDown ? 'center' : undefined}
         justifyContent='space-between'
       >
-        <Grid item container sx={{ maxWidth: '40em' }} md>
+        <Grid item container sx={{ maxWidth: '40em', mb: isMedAndDown ? '15em' : 0 }} md>
           <Grid item container direction='column' md>
             <Grid item>
               <Typography variant='h4'>Digital Documents & Data</Typography>
@@ -212,7 +213,7 @@ export default function CustomSoftware(props) {
         alignItems={isMedAndDown ? 'center' : undefined}
         justifyContent='space-between'
       >
-        <Grid item container sx={{ maxWidth: '40em' }} md>
+        <Grid item container sx={{ maxWidth: '40em', mb: isMedAndDown ? '15em' : 0 }} md>
           <Grid item container direction='column' md>
             <Grid item>
               <Typography variant='h4'>Automation</Typography>
