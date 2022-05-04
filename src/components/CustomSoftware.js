@@ -193,7 +193,7 @@ export default function CustomSoftware(props) {
       <Grid item container direction='row' sx={{ mt: '20em', mb: '20em' }}>
         <Grid item container direction='column' alignItems='center'>
           <Grid item>
-            <img src={roots} alt='tree with roots extending out' height='450em' width='450em' />
+            <img src={roots} alt='tree with roots extending out' height={isSmAndDown ? '300em' : '450em'} width={isSmAndDown ? '300em' : '450em'} />
           </Grid>
           <Grid item style={{ maxWidth: '40em' }}>
             <Typography variant='h4' align='center' gutterBottom>Root-Cause Analysis</Typography>
