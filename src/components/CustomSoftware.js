@@ -57,7 +57,10 @@ export default function CustomSoftware(props) {
 
   return (
     <Grid container direction='column' sx={{
-      padding: '2em 5em 10em 5em'
+      padding: '2em 5em 10em 5em',
+      [theme.breakpoints.down('md')]: {
+        padding: '1em 1.5em 5em 1.5em'
+      }
     }}>
       <Grid item container direction='row' justifyContent={isMedAndDown ? 'center' : undefined}>
         <Hidden lgDown>
