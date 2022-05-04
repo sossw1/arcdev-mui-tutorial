@@ -2,6 +2,7 @@ import { Grid, IconButton, Typography } from '@mui/material';
 import Lottie from 'react-lottie';
 import { Link } from 'react-router-dom';
 
+import automationAnimation from '../animations/automationAnimation/data';
 import backArrow from '../assets/backArrow.svg';
 import cash from '../assets/cash.svg';
 import documentsAnimation from '../animations/documentsAnimation/data';
@@ -10,6 +11,7 @@ import lightbulb from '../assets/bulb.svg';
 import roots from '../assets/root.svg';
 import scaleAnimation from '../animations/scaleAnimation/data';
 import stopwatch from '../assets/stopwatch.svg';
+import uxAnimation from '../animations/uxAnimation/data';
 
 export default function CustomSoftware(props) {
   const { setSelectedMenuIndex } = props;
@@ -27,6 +29,24 @@ export default function CustomSoftware(props) {
     loop: true,
     autoplay: true,
     animationData: scaleAnimation,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  }
+
+  const automationOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: automationAnimation,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  }
+
+  const uxOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: uxAnimation,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice'
     }
@@ -170,6 +190,58 @@ export default function CustomSoftware(props) {
             <Typography variant='body1' align='center' paragraph>
               We can help you thoroughly examine all areas of your business to develop a holistic plan for the most effective implementation of technology.
             </Typography>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid item container direction='row' justifyContent='space-between'>
+        <Grid item container sx={{ maxWidth: '40em' }} md>
+          <Grid item container direction='column' md>
+            <Grid item>
+              <Typography variant='h4'>Automation</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant='body1' paragraph>
+                Why waste time when you don't have to?
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant='body1' paragraph>
+                We can help you identify processes with time or event based actions which can now easily be automated.
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant='body1' paragraph>
+                Increasing efficiency increases profits, leaving you more time to focus on your business, not busywork.
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item md>
+            <Lottie options={automationOptions} style={{
+              maxHeight: 290, maxWidth: 280
+            }} />
+          </Grid>
+        </Grid>
+        <Grid item container sx={{ maxWidth: '40em' }} md>
+          <Grid item md>
+            <Lottie options={uxOptions} style={{
+              maxHeight: 310, maxWidth: 155
+            }} />
+          </Grid>
+          <Grid item container direction='column' md>
+            <Grid item>
+              <Typography variant='h4' align='right'>User Experience Design</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant='body1' align='right' paragraph>
+                A good design that isn't usable isn't a good design.
+              </Typography>
+              <Typography variant='body1' align='right' paragraph>
+                So why are so many pieces of software complicated, confusing, and frustrating?
+              </Typography>
+              <Typography variant='body1' align='right' paragraph>
+                By prioritizing users and the real ways they interact with technology we're able to develop unique, personable experiences that solve problems rather than create new ones.
+              </Typography>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
